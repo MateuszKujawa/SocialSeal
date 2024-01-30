@@ -1,0 +1,218 @@
+body{
+  overflow-x: hidden;
+}
+
+.text-gradient{
+  background: linear-gradient(90deg, #6071D9 36.51%, #AA676F 63.73%, #CCB41A 97.49%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Filter */
+.filter-content{
+  filter: contrast(21%) invert(23%);
+  -webkit-filter: contrast(65%) invert(23%);
+  -moz-filter: contrast(10%) invert(23%);
+}
+
+/* Overlay after open popup */
+.overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Mobile menu style's */
+.mobile-menu {
+  top: -100vh;
+  left: 0;
+  transition: 0.5s;
+}
+
+.mobile-menu.active {
+  top: 90px;
+}
+
+.mobile-menu ul li ul {
+  display: none;
+}
+
+.mobile-menu ul li:hover ul {
+  display: block;
+}
+
+
+/* Swiper 2 */
+#swiper2{
+  margin-top: 50px;
+  max-width: 1440px;
+  height: 100%;
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  #swiper2 {
+    max-width: 768px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #swiper2 {
+    max-width: 640px;
+  }
+}
+
+
+#swiper2 .swiper-slide figure{
+  height: 100%;
+  max-width: 100%;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+#swiper2 .swiper-slide figure img{
+  height: 100%;
+  max-width: 100%;
+}
+
+
+#swiper2 .swiper-slide{
+  width: 100%;
+  height: 100%;
+}
+
+.swiperNavigationBox [class^="swiper-button-prev"]::after{
+  background-color: #ebebeb85;
+  border-radius: 24px;
+  color: #2d2d48;
+  font-size: 20px;
+  width: 50px;
+  height: 50px;
+  padding: 25px 25px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 35px;
+}
+[class^="swiper-button-prev"]:hover::after{
+  background: #EBEBEB;
+}
+
+.swiperNavigationBox [class^="swiper-button-next"]::after{
+  background-color: #ebebeb85;
+  border-radius: 24px;
+  color: #2d2d48;
+  font-size: 20px;
+  width: 50px;
+  height: 50px;
+  padding: 25px 25px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 35px;
+}
+[class^="swiper-button-next"]:hover::after{
+  background: #EBEBEB;
+}
+
+/* Swiper3 */
+.swiper {
+  width: 1230px;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+}
+
+
+.swiper .swiper-pagination-bullet{
+  width: 14px;
+  height: 14px;
+  background-color: rgb(0, 0, 0);
+  border: 2px solid #D9D9D9;
+  padding: 7px;
+}
+
+.swiper .swiper-pagination-bullet-active{
+  background-color: #F89E52;
+}
+
+@media screen and (max-width: 1530px) {
+  .swiper {
+    width: 100%;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .swiper {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .swiper {
+    width: 90%;
+  }
+}
+
+
+
+/* Animations */
+/* Rotate Animation */
+@keyframes rotateAnimation {
+  0% {
+    rotate: 0deg;
+  }
+  50% {
+    rotate: 10deg;
+  }
+  100% { 
+    rotate: 0deg;
+  }
+}
+
+.rotateAnimation {
+  animation: rotateAnimation 8s infinite;
+}
+
+
+
+/* Left To Right Floating */
+@keyframes leftToRightAnimation {
+  0% {
+    left: -15px;
+  }
+  50% {
+    left: 15px;
+  }
+  100% {
+    left: -15px;
+  }
+}
+
+.left-to-rightAnimation {
+  animation: leftToRightAnimation 1s ease-in-out infinite;
+}
+

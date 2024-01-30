@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    
+    <!-- CSS & TailwindCSS -->
+    <link rel="stylesheet" href="css/customStyle.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    
+    
+</head>
+<body class="font-poppins">
+    <header>
+        <!-- Nav -->
+        <div class="relative bg-transparent z-30">
+            <nav x-data="{ open: false }" class="max-h-[100px] mx-auto lg:px-10 px-4 shadow-xl lg:shadow-none">
+                <div class="flex flex-wrap items-center justify-between mx-auto py-4">
+                    <!-- Logo -->
+                    <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+                        <img src="images/logo/socialSealLogo.png" alt="logo Social Seal" class="w-[126px] bg-transparent">
+                    </a>
+                    <!-- Buttons -->
+                    <div class="flex md:order-2">
+                        <!-- Orange button -->
+                        <button type="button" class="text-white lg:text-[16px] md:text-[14px] bg-[#F89E52] rounded-[20px] h-[54px] px-6 md:mr-4 text-center hidden md:block">Speak With Us!</button>
+
+                        <!-- Hamburger button -->
+                        <div class="relative mx-auto lg:hidden scale-125 mb-2">
+                                <button class="text-[#F89E52] duration-100 w-14 h-14 relative focus:outline-none" @click="open = !open" id="mobile-icon">
+                                    <div class="block w-5 absolute left-1/2 top-1/2 transform -translate-y-1/2">
+                                        <span aria-hidden="true" class="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out" :class="{'rotate-45': open,' -translate-y-1.5': !open }"></span>
+                                        <span aria-hidden="true" class="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out" :class="{'opacity-0': open } "></span>
+                                        <span aria-hidden="true" class="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out" :class="{'-rotate-45': open, ' translate-y-1.5': !open}"></span>
+                                    </div>
+                                </button>
+                        </div>
+                    </div>
+                    <!-- Navbar -->
+                    <div class="items-center justify-between w-full md:w-auto md:order-1 hidden md:hidden lg:block" id="navbar-sticky">
+                        <ul class="flex flex-col p-2 md:p-0 mt-4 lg:text-[16px] md:space-x-2 lg:space-x-4 rtl:space-x-reverse md:flex-row md:mt-0">
+                            <li>
+                                <a href="#" class="block py-2 px-2 md:px-0.5 text-black hover:text-[#F89E52] duration-300">Management</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block py-2 px-2 md:px-0.5 text-black hover:text-[#F89E52] duration-300">Marketing</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block py-2 px-2 md:px-0.5 text-black hover:text-[#F89E52] duration-300">Increase Sales</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block py-2 px-2 md:px-0.5 text-black hover:text-[#F89E52] duration-300" id="servicesBtn">Services <i class="fa-solid fa-chevron-down ml-1 duration-300" id="arrowIconServices"></i></a>
+                            </li>
+                            <li> 
+                                <a href="#" class="block py-2 px-2 md:px-0.5 text-black hover:text-[#F89E52] duration-300" id="plansBtn">Plans & Pricing <i class="fa-solid fa-chevron-down ml-1 duration-300" id="arrowIconPlans"></i></a>
+                            </li>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Mobile nav menu -->
+                <div class="lg:hidden flex flex-col justify-center w-full">
+                    <div id="mobile-menu" class="mobile-menu absolute top-23 w-full">
+                        <ul class="flex flex-col text-[16px] rtl:space-x-reverse pt-4 bg-white h-screen">
+                            <li>
+                                <a href="#" class="block py-2 px-5 text-black hover:text-[#F89E52] font-[500] duration-300 border-t border-[#c5c5c5]">Management</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block py-2 px-5 text-black hover:text-[#F89E52] font-[500] duration-300 border-t border-[#c5c5c5]">Marketing</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block py-2 px-5 text-black hover:text-[#F89E52] font-[500] duration-300 border-t border-[#c5c5c5]">Increase Sales</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block py-2 px-5 text-black hover:text-[#F89E52] font-[500] duration-300 border-t border-[#c5c5c5]" id="servicesBtn">Services</a>
+                            </li>
+                            <li> 
+                                <a href="#" class="block py-2 px-5 text-black hover:text-[#F89E52] font-[500] duration-300 border-t border-[#c5c5c5] border-b" id="plansBtn">Plans & Pricing</a>
+                            </li>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Dropdown menu -->
+    <div class="fixed left-1/2 transform -translate-x-1/2 bg-white z-30 w-full h-[525px] border-t-[1px] border-b-[1px] border-[#E5E7EC] drop-shadow-lg hidden" id="dropdownPlans">
+        <div class="flex flex-col items-center justify-center">
+            <div class="max-w-[1440px] h-full mt-16 grid grid-cols-4 lg:gap-14 md:gap-4 lg:px-4 md:px-4">
+            <!-- Dropdown box items -->
+            <!-- Item 1 -->
+            <div class="flex-col max-w-[279px]">
+                <h1 class="lg:text-[28px] md:text-[20px]  font-[300] pb-4">Management</h1>
+                <hr class="w-full">
+                <p class="text-[#727272] font-[400] lg:text-[17px] md:text-[14px] leading-8 pt-4 pb-6">
+                    Great for those starting up in Social Media and looking for a regular management service to keep up.
+                </p>
+                <div class="grid grid-cols-1 gap-5">
+                    <div class="flex space-x-2">
+                        <img src="images/icons/header icons/dropdown-icons/route.png"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Rates</a>
+                    </div>
+                    <div class="flex space-x-2">
+                        <img src="images/icons/header icons/dropdown-icons/wand.png"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Features</a>
+                    </div>
+                    <div class="flex space-x-2">
+                        <img src="images/icons/header icons/dropdown-icons/colors.png"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Sign Up</a>
+                    </div>
+                
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="flex-col max-w-[279px]">
+                <h1 class="lg:text-[28px] md:text-[20px]  font-[300] pb-4">Growth Plans</h1>
+                <hr class="w-full">
+                <p class="text-[#727272] font-[400] lg:text-[17px] md:text-[14px] leading-8 pt-4 pb-6">
+                    Geared for those looking to grow their Social Media presence and capitalize on marketing benefits.
+                </p>
+                <div class="grid grid-cols-1 gap-5">
+                    <div class="flex space-x-2">
+                        <img src="images/icons/header icons/dropdown-icons/search.png"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Rates</a>
+                    </div>
+                    <div class="flex space-x-2">
+                        <img src="images/icons/header icons/dropdown-icons/stars.png"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Features</a>
+                    </div>
+                    <div class="flex space-x-2">
+                        <img src="images/icons/header icons/dropdown-icons/user-right.png"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="flex-col max-w-[279px]">
+                <h1 class="lg:text-[28px] md:text-[20px]  font-[300] pb-4">Custom Plans</h1>
+                <hr class="w-full">
+                <div class="grid grid-cols-1 gap-5 pt-6">
+                    <div class="grid grid-cols-1 gap-y-6">
+                        <div class="flex space-x-2">
+                            <img src="images/icons/header icons/dropdown-icons/inbox.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Inbox Management</a>
+                        </div>
+                        <div class="flex space-x-2">
+                            <img src="images/icons/header icons/dropdown-icons/message-notification.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Social Listening</a>
+                        </div>
+                        <div class="flex space-x-2">
+                            <img src="images/icons/header icons/dropdown-icons/activity-heart.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Brand Reputation</a>
+                        </div>
+                        <div class="flex space-x-2">
+                            <img src="images/icons/header icons/dropdown-icons/announcement.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Crisis Management</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="flex-col max-w-[279px]">
+                <h1 class="lg:text-[28px] md:text-[20px]  font-[300] pb-4">Growth</h1>
+                <hr class="w-full">
+                
+                <div class="grid grid-cols-1 gap-5 pt-6">
+                    <div class="grid grid-cols-1 gap-y-6">
+                        <div class="flex space-x-2">
+                            <img src="images/icons/header icons/dropdown-icons/inbox.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52] ">Paid Advertising Setup</a>
+                        </div>
+                        <div class="flex space-x-2">
+                            <img src="images/icons/header icons/dropdown-icons/message-notification.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52] ">Campaign Management</a>
+                        </div>
+                        <div class="flex space-x-2">
+                            <img src="images/icons/header icons/dropdown-icons/activity-heart.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52] ">Strategy Optimalization</a>
+                        </div>
+                        <div class="flex space-x-2">
+                            <img src="images/icons/header icons/dropdown-icons/announcement.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52] ">Analytics & Reporting</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <!-- Button -->
+            <button class="mb-16 mt-16 text-[#3482ff] hover:text-[#3452ff] duration-300">
+                <a href="#" class="text-[16px] rounded-[20px] px-[55px] py-[28px] border border-[#3482ff]">View All Services</a>
+            </button>
+        </div>
+    </div>
+    <div class="fixed left-1/2 transform -translate-x-1/2 bg-white z-30 w-full h-[525px] border-t-[1px] border-b-[1px] border-[#E5E7EC] drop-shadow-lg hidden" id="dropdownServices">
+        <div class="flex flex-col justify-center items-center">
+            <div class="max-w-[1440px] h-full mt-16 grid grid-cols-4 lg:gap-14 md:gap-4 lg:px-4 md:px-4">
+                    <!-- Dropdown box items -->
+                    <!-- Item 1 -->
+                    <div class="flex-col max-w-[279px]">
+                        <h1 class="lg:text-[28px] md:text-[20px]  font-[300] pb-4">Fundamentals</h1>
+                        <hr class="w-full">
+                        <div class="grid grid-cols-1 gap-5 pt-10">
+                            <div class="flex space-x-2">
+                                <img src="images/icons/header icons/dropdown-icons/route.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Strategy Planning</a>
+                            </div>
+                            <div class="flex space-x-2">
+                                <img src="images/icons/header icons/dropdown-icons/wand.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Profile Setup</a>
+                            </div>
+                            <div class="flex space-x-2">
+                                <img src="images/icons/header icons/dropdown-icons/colors.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Theming & Branding</a>
+                            </div>
+                            <div class="flex space-x-2">
+                                <img src="images/icons/header icons/dropdown-icons/order.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Training</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="flex-col max-w-[279px]">
+                        <h1 class="lg:text-[28px] md:text-[20px]  font-[300] pb-4">Content</h1>
+                        <hr class="w-full">
+                        <div class="grid grid-cols-1 gap-5 pt-10">
+                            <div class="flex space-x-2">
+                                <img src="images/icons/header icons/dropdown-icons/search.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Research & Planning</a>
+                            </div>
+                            <div class="flex space-x-2">
+                                <img src="images/icons/header icons/dropdown-icons/icon.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Post Creation</a>
+                            </div>
+                            <div class="flex space-x-2">
+                                <img src="images/icons/header icons/dropdown-icons/camera.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Video Creation</a>
+                            </div>
+                            <div class="flex space-x-2">
+                                <img src="images/icons/header icons/dropdown-icons/line-chart.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Keyword Optimalization</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="flex-col max-w-[279px]">
+                        <h1 class="lg:text-[28px] md:text-[20px]  font-[300] pb-4">Public Relations</h1>
+                        <hr class="w-full">
+                        <div class="grid grid-cols-1 gap-5 pt-10">
+                            <div class="flex space-x-2">
+                                <img src="images/icons/header icons/dropdown-icons/inbox.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Inbox Management</a>
+                            </div>
+                            <div class="flex space-x-2">
+                                <img src="images/icons/header icons/dropdown-icons/message-notification.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Social Listening</a>
+                            </div>
+                            <div class="flex space-x-2">
+                                <img src="images/icons/header icons/dropdown-icons/activity-heart.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Brand Reputation</a>
+                            </div>
+                            <div class="flex space-x-2">
+                                <img src="images/icons/header icons/dropdown-icons/announcement.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Crisis Management</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="flex-col max-w-[279px]">
+                        <h1 class="lg:text-[28px] md:text-[20px]  font-[300] pb-4">Market Growth</h1>
+                        <hr class="w-full">
+                        <div class="grid grid-cols-1 gap-5 pt-10">
+                            <div class="flex space-x-2">
+                                <img src="images/icons/header icons/dropdown-icons/dataflow.png" class="h-min"><a href="#" class="lg:text-[18px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Paid Advertising Setup</a>
+                            </div>
+                            <div class="flex space-x-2">
+                                <img src="images/icons/header icons/dropdown-icons/shield-dollar.png" class="h-min"><a href="#" class="lg:text-[18px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Campaign Management</a>
+                            </div>
+                            <div class="flex space-x-2">
+                                <img src="images/icons/header icons/dropdown-icons/chart-breakout-circle.png" class="h-min"><a href="#" class="lg:text-[18px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Strategy Optimization</a>
+                            </div>
+                            <div class="flex space-x-2">
+                                <img src="images/icons/header icons/dropdown-icons/presentation.png" class="h-min"><a href="#" class="lg:text-[18px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Analytics & Reporting</a>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <!-- Button -->
+            <button class="mb-16 mt-32 text-[#3482ff] hover:text-[#3452ff] duration-300">
+                <a href="#" class="text-[16px] rounded-[20px] px-[55px] py-[28px] border border-[#3482ff]">View All Services</a>
+            </button>
+        </div>
+    </div>
+    <!-- Dropdown menu end -->
+
+        <!-- SVG-->
+        <div class="absolute top-0 left-0 z-10 hidden lg:block">
+            <svg width="855" height="698" viewBox="0 0 655 698" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M609.974 46.1754C664.092 146.301 662.755 258.442 640.708 371.25C619.328 484.059 577.237 597.535 489.714 654.273C402.19 711.678 268.567 713.013 183.049 655.608C97.53 598.202 60.7836 483.391 20.6967 355.23C-18.7221 227.737 -60.8133 87.5607 -8.70033 -11.8976C43.4127 -111.356 189.73 -169.429 318.008 -154.744C446.286 -140.726 555.857 -53.2829 609.974 46.1754Z" fill="#F3F7FA"/>
+                </svg>
+        </div>
+    </header>
+
+    <section class="relative h-auto lg:h-[80vh] mx-auto lg:mt-16 my-10 z-20 lg:px-10 md:px-6" id="baner">
+        <div class="w-full flex flex-col lg:flex-row justify-center items-center z-20">
+            <!-- LG Size -->
+            <div class="lg:flex space-x-20 hidden">
+                <div class="flex flex-col space-y-10">
+                    <p class="w-[370px] py-[12px] bg-[#F79D5A] text-white text-[18px] text-center rounded-[32px]">Social
+                        Media Marketing That Works!</p>
+                    <h1 class="font-[700] text-[55px] leading-[66px]">Save Time<br> Build Connections<br> Increase Profits
+                    </h1>
+                    <div class="flex space-x-4">
+                        <img src="images/icons/header icons/linkedin.png">
+                        <img src="images/icons/header icons/fb.png">
+                        <img src="images/icons/header icons/ig.png">
+                        <img src="images/icons/header icons/g.png">
+                        <img src="images/icons/header icons/tw.png">
+                        <img src="images/icons/header icons/yt.png">
+                        <img src="images/icons/header icons/pint.png">
+                    </div>
+                    <div class="flex space-x-2">
+                        <a href="#"
+                            class="rounded-[20px] py-[28px] px-[55px] bg-[#3482FF] text-white text-[16px] font-[600] text-center">View
+                            Our Plans</a>
+                        <a href="#" class="font-normal text-[#3482FF] py-[28px] px-[28px] text-center">What We Offer</a>
+                    </div>
+                </div>
+    
+                <div class="h-auto flex justify-center items-center space-x-4">
+                    <div class="flex-col">
+                        <div>
+                            <img src="images/img/header/worker.png" class="max-w-max h-auto">
+                        </div>
+                        <div>
+                            <img src="images/img/header/girl-in-car.png" class="max-w-max h-auto">
+                        </div>
+                    </div>
+                    <div>
+                        <img src="images/img/header/greece.png" class="max-w-max h-auto">
+                    </div>
+                </div>
+            </div>
+    
+            <!-- MD Size -->
+            <div class="flex flex-col justify-center items-center space-y-10 lg:hidden">
+                <div class="flex flex-col space-y-6 justify-center items-center text-center">
+                    <p class="w-[370px] py-[10px] bg-[#F79D5A] text-white text-[18px] rounded-[32px]">Social Media Marketing
+                        That Works!</p>
+    
+                    <h1 class="font-[700] text-[35px] md:text-[60px] md:leading-[60px] leading-[35px]">Save Time<br> Build
+                        Connections<br> Increase Profits</h1>
+                </div>
+    
+                <div class="flex justify-center items-center space-x-4 px-4">
+                    <div class="flex-col">
+                        <div>
+                            <img src="images/img/header/worker.png" class=" h-auto">
+                        </div>
+                        <div>
+                            <img src="images/img/header/girl-in-car.png" class=" h-auto">
+                        </div>
+                    </div>
+                    <div class="flex">
+                        <img src="images/img/header/girl-on-beach.png" class=" h-auto">
+                    </div>
+                </div>
+    
+    
+                <div class="space-y-6 flex flex-col pb-[150px]">
+                    <div class="flex space-x-4 mt-4">
+                        <img src="images/icons/header icons/linkedin.png">
+                        <img src="images/icons/header icons/fb.png">
+                        <img src="images/icons/header icons/ig.png">
+                        <img src="images/icons/header icons/g.png">
+                        <img src="images/icons/header icons/tw.png">
+                        <img src="images/icons/header icons/yt.png">
+                        <img src="images/icons/header icons/pint.png">
+                    </div>
+    
+                    <div class="mx-auto relative left-to-rightAnimation w-full">
+                        <a href="#"
+                            class="block w-full rounded-[20px] py-[14px] md:py-[28px] px-[55px] bg-[#3482FF] text-white text-[16px] font-[600] text-center">View
+                            Our Plans</a>
+                    </div>
+    
+                </div>
+    
+    
+            </div>
+        </div>
+    </section>
+    <!-- Slider -->
+    <div class="relative">
+        <!-- Slider animate off -->
+        <div class="absolute left-1/2 transform -translate-x-1/2 top-[-75px] h-[150px] w-[95%] bg-[#1D1D25] flex items-center justify-center rounded-2xl lg:hidden">
+            <div x-data="{}" x-init="$nextTick(() => {
+                            let ul = $refs.logos;
+                            ul.insertAdjacentHTML('afterend', ul.outerHTML);
+                            ul.nextSibling.setAttribute('aria-hidden', 'true');
+                        })"
+                class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
+                <ul x-ref="logos"
+                    class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
+                    <li>
+                        <img src="images/icons/company_icons/entrepreneur.png" alt="Facebook" />
+                    </li>
+                    <li>
+                        <img src="images/icons/company_icons/facebook.png" alt="Disney" />
+                    </li>
+                    <li>
+                        <img src="images/icons/company_icons/google.png" alt="Airbnb" />
+                    </li>
+                    <li>
+                        <img src="images/icons/company_icons/meta.png" alt="Apple" />
+                    </li>
+                </ul>
+            </div>
+        </div>
+            <!-- Slider animate on -->
+            <div class="absolute left-1/2 transform -translate-x-1/2 top-[-75px] h-[150px] w-[65%] bg-[#1D1D25] lg:flex items-center justify-center rounded-2xl hidden">
+                <div
+                    x-data="{}"
+                    class="w-full inline-flex flex-nowrap overflow-hidden justify-center [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
+                >
+                    <ul x-ref="logos" class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-none">
+                        <li>
+                            <img src="images/icons/company_icons/entrepreneur.png" alt="Facebook" />
+                        </li>
+                        <li>
+                            <img src="images/icons/company_icons/facebook.png" alt="Disney" />
+                        </li>
+                        <li>
+                            <img src="images/icons/company_icons/google.png" alt="Airbnb" />
+                        </li>
+                        <li>
+                            <img src="images/icons/company_icons/meta.png" alt="Apple" />
+                        </li>
+                    </ul>                
+                </div>
+            </div>
+    </div>
+
+    <section class="w-full lg:h-screen h-auto bg-[#292F3E] flex items-center justify-center space-x-4" id="section_counter">
+            <div class="flex lg:flex-row flex-col max-w-[1230px] px-2 lg:pb-10 mt-32">
+                <!-- Left site -->
+                <div
+                    class="lg:order-1 order-2 h-fit lg:max-w-1/2 w-full flex flex-col items-center text-center lg:text-left lg:items-start py-20 lg:py-0 space-y-y">
+                    <p class="text-[#FFD437] font-[500] text-[20px]">
+                        Social Media Management is
+                    </p>
+                    <h1 class="text-white font-[700] text-[50px] leading-[60px]">
+                        Building Brands<br />Creating Connections<br />Driving Sales
+                    </h1>
+            
+                    <div class="text-[19px] text-[#bbbbbb] font-[300] space-y-4 lg:w-[70%] w-full">
+                        <p>
+                            Social Media is more than just posting and showing off how many
+                            followers you have. It's a valuable addition to your marketing strategy
+                            that <a href="#" class="underline text-[#DBDBDB]">builds trust</a> and
+                            <a href="#" class="underline text-[#DBDBDB]">creates connections</a> with potential
+                            customers to <a href="#" class="underline text-[#DBDBDB]">drive sales</a> and increase
+                            your <a href="#" class="underline text-[#DBDBDB]">revenue</a>.
+                        </p>
+                        <p>
+                            Save your time and money by partnering with us and start seeing results
+                            that give you the
+                            <a href="#" class="underline text-[#DBDBDB]">highest return on investment</a>.
+                        </p>
+                        <p>After all; when you grow, we grow together.</p>
+                    </div>
+            
+                    <div class="flex flex-col sm:flex-row w-full space-x-2 py-4 items-center justify-center lg:justify-start">
+                        <a href="#"
+                            class="block rounded-[20px] w-full sm:w-fit py-[14px] sm:py-[28px] sm:px-[55px] bg-[#3482FF] text-white text-[16px] font-[600] text-center">Contact
+                            Us</a>
+                        <a href="#"
+                            class="block font-normal text-[#3482FF] w-full sm:w-fit py-[14px] sm:py-[28px] px-[28px] text-center">How
+                            We Can Help</a>
+                    </div>
+                </div>
+                <!-- Right site -->
+                <div
+                    class="lg:order-2 order-1 h-fit lg:max-w-1/2 w-full flex flex-col sm:flex-row sm:space-x-8 space-y-8 sm:space-y-0 justify-center items-center">
+                    <div class="flex-col space-y-8 mt-16">
+                        <div
+                            class="counter-item w-[250px] h-[250px] bg-white bg-[url('images/icons/counterIcons/divicon1.png')] bg-no-repeat bg-left-bottom rounded-xl flex flex-col justify-center items-center">
+                            <h1 class="count text-[#F76766] text-[50px] font-[700]" data-target="100">0</h1>
+                            <p class="text-[#6B645D] text-[18px] font-[500]">Offices</p>
+                        </div>
+                        <div
+                            class="counter-item w-[250px] h-[250px] bg-white bg-[url('images/icons/counterIcons/divicon2.png')] bg-no-repeat bg-left-bottom rounded-xl flex flex-col justify-center items-center">
+                            <div class="inline-flex">
+                                <h1 class="count text-[#57C0CE] text-[50px] font-[700]" data-target="3">0</h1><span
+                                    class="text-[#57C0CE] text-[50px] font-[700]">K</span>
+                            </div>
+                            <p class="text-[#6B645D] text-[18px] font-[500]">Customers</p>
+                        </div>
+                    </div>
+                    <div class="flex-col space-y-8 mb-16">
+                        <div
+                            class="counter-item w-[250px] h-[250px] bg-white bg-[url('images/icons/counterIcons/divicon4.png')] bg-no-repeat bg-right-bottom rounded-xl flex flex-col justify-center items-center">
+                            <h1 class="count text-[#265FDB] text-[50px] font-[700]" data-target="10">0</h1>
+                            <p class="text-[#6B645D] text-[18px] font-[500]">Workers</p>
+                        </div>
+                        <div
+                            class="counter-item w-[250px] h-[250px] bg-white bg-[url('images/icons/counterIcons/divicon3.png')] bg-no-repeat bg-left-bottom rounded-xl flex flex-col justify-center items-center">
+                            <div class="inline-flex">
+                                <h1 class="count text-[#A666F7] text-[50px] font-[700]" data-target="100">0</h1><span
+                                    class="text-[#A666F7] text-[50px] font-[700]">+</span>
+                            </div>
+                            <p class="text-[#6B645D] text-[18px] font-[500]">Projects</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+        
+    <section class="relative w-full h-screen bg-white mt-10 lg:mt-0">
+            <div class="relative max-w-[1230px] h-full mx-auto flex flex-col lg:flex-row items-center justify-center space-x-8 px-4 space-y-8">
+                <div class="flex flex-col space-y-6 justify-center lg:items-start items-center lg:text-left text-center">
+                    <p class="text-[#F89E52] font-[500] text-[20px]">
+                        Our Expertise is Your Success
+                    </p>
+                    <h1 class="text-black font-[700] text-[50px] leading-[60px]">
+                        Struggling to Make Engaging Content?
+                    </h1>
+                    <div class="text-[19px] text-[#bbbbbb] font-[300]">
+                        <p>
+                            From the research and planning to
+                            creating striking images and videos for
+                            your posts, our service focuses on
+                            creating a <a href="#" class="underline text-[#191919]">unique voice</a> for your brand
+                            that will <a href="#" class="underline text-[#191919]">engage your audience</a> and
+                            keep them coming back for more!
+                        </p>
+                    </div>
+                    <a href="#"
+                        class="hidden lg:block rounded-[20px] w-full sm:w-fit py-[14px] sm:py-[28px] sm:px-[55px] bg-[#3482FF] text-white text-[16px] font-[600] text-center">View
+                        more
+                    </a>
+                </div>
+            
+                <div class="swiper mySwiper w-[60%] lg:w-auto flex justify-center items-center">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/img/swiperImg/1.png"></div>
+                        <div class="swiper-slide"><img src="images/img/swiperImg/2.png"></div>
+                        <div class="swiper-slide"><img src="images/img/swiperImg/3.png"></div>
+                        <div class="swiper-slide"><img src="images/img/swiperImg/4.png"></div>
+                        <div class="swiper-slide"><img src="images/img/swiperImg/5.png"></div>
+                        <div class="swiper-slide"><img src="images/img/swiperImg/6.png"></div>
+                        <div class="swiper-slide"><img src="images/img/swiperImg/7.png"></div>
+                        <div class="swiper-slide"><img src="images/img/swiperImg/8.png"></div>
+                        <div class="swiper-slide"><img src="images/img/swiperImg/9.png"></div>
+                    </div>
+                </div>
+                <div class="lg:hidden w-full flex items-center justify-center h-fit px-4">
+                    <a href="#"
+                        class="rounded-[20px] w-full sm:w-fit py-[23px] sm:py-[28px] px-[55px] bg-[#3482FF] text-white text-[16px] font-[600] text-center">View
+                        more
+                    </a>
+                </div>
+            </div>
+            
+    </section>
+        
+    <section class="w-full lg:h-screen h-auto flex items-center justify-center mt-[150px] lg:mt-0">
+        <div class="lg:w-[1230px] w-full flex flex-col lg:flex-row lg:justify-between justify-center items-center lg:space-x-20">
+            <div class="lg:w-1/2 w-full flex justify-center items-center">
+                <img src="images/img/phoneImage.svg">
+            </div>
+
+            <div class="lg:w-1/2 w-full">
+                    <div class="bg-white flex flex-col space-y-6 lg:text-left text-center items-center lg:items-start w-full px-[20px]">
+                        <p class="text-[#F89E52] font-[500] text-[20px]">
+                            Worry-Free
+                        </p>
+                        <h1 class="text-black font-[700] text-[50px] leading-[60px]">
+                            Risking Your Reputation and Losing Sales?
+                        </h1>
+                        <div class="text-[19px] text-[#bbbbbb] font-[300] lg:max-w-[420px]">
+                            <p>
+                                Our 24/7 Inbox Management is your answer
+                                to keep up with messages and not miss out
+                                on potential leads.
+                            </p>
+                            <p class="pt-2">
+                                By offering <a href="#" class="underline text-[#191919]">quick replies</a> to your audience
+                                you will <a href="#" class="underline text-[#191919]">elevate your brands image</a> and
+                                help you <a href="#" class="underline text-[#191919]">get the sale</a>.
+                            </p>
+                        </div>
+                        <div class="w-full sm:w-fit flex justify-center items-center">
+                            <a href="#" class="block px-[38px] sm:px-[55px] py-[23px] sm:py-[28px] rounded-[20px] bg-[#3482FF] text-white text-[16px] font-[600] text-center w-full">Start Replying Faster</a>
+                        </div>
+                       
+                    </div>
+            </div>
+         </div>
+    </section>
+
+    <section class="w-full lg:h-screen h-auto flex items-center justify-center mt-[150px] lg:mt-0">
+            <div class="lg:w-[1230px] w-full flex flex-col lg:flex-row lg:justify-between justify-center items-center lg:space-x-20">
+                <div class="lg:w-1/2 w-full order-2 lg:order-1">
+                    <div class="bg-white flex flex-col space-y-6 lg:text-left text-center items-center lg:items-start w-full px-[20px]">
+                        <p class="text-[#F89E52] font-[500] text-[20px]">
+                            Thinking "Outside The Box"
+                        </p>
+                        <h1 class="text-black font-[700] text-[50px] leading-[60px]">
+                            Troubles Growing Your Audience?
+                        </h1>
+                        <div class="text-[19px] text-[#bbbbbb] font-[300] lg:max-w-[420px] space-y-4 text-left sm:text-center lg:text-left ">
+                            <p>
+                                <a href="#" class="underline text-[#191919]">Attract new followers</a> that are <a href="#" class="underline text-[#191919]">relevant</a> to your objectives by
+                                reaching <a href="#" class="underline text-[#191919]">outside your social media</a> bubble, and you'll start to
+                                see a <a href="#" class="underline text-[#191919]">quicker return on your investment</a>.
+                            </p>
+                            <p>
+                                Along with <a href="#" class="underline text-[#191919]">captivating visuals</a>, our teams perform countless
+                                <a href="#" class="underline text-[#191919]">hours of research and planning</a> to deliver <a href="#" class="underline text-[#191919]">optimized marketing campaigns</a> that target your <a href="#" class="underline text-[#191919]">ideal audience</a> who are most likely to <a href="#" class="underline text-[#191919]">convert into leads</a>.
+                            </p>
+                            <p>
+                                By thoroughly planning your paid <a href="#" class="underline text-[#191919]">Social Media Advertising</a>
+                                campaign, we are able to ensure that every penny of your
+                                <a href="#" class="underline text-[#191919]">marketing budget is well spent</a>.
+                            </p>
+                        </div>
+                        <div class="w-full sm:w-fit flex justify-center items-center">
+                            <a href="#" class="block px-[38px] sm:px-[55px] py-[23px] sm:py-[28px] rounded-[20px] bg-[#3482FF] text-white text-[16px] font-[600] text-center w-full">Start Driving Sales</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 w-full flex justify-center items-center order-1 lg:order-2">
+                    <img src="images/img/success_img.png.svg">
+                </div>
+            </div>
+    </section>
+        
+    <section class="w-full lg:h-screen h-auto flex items-center justify-center mt-[150px] lg:mt-0">
+            <div class="lg:w-[1230px] w-full flex flex-col lg:flex-row lg:justify-between justify-center items-center lg:space-x-20">
+                <div class="lg:w-1/2 w-full flex justify-center items-center">
+                    <img src="images/img/div-work-img.svg">
+                </div>
+
+                <div class="lg:w-1/2 w-full">
+                    <div class="bg-white flex flex-col space-y-6  items-center lg:items-start w-full px-[20px]">
+                        <p class="text-[#F89E52] font-[500] text-[20px] text-center lg:text-left">
+                            Keeping You Covered
+                        </p>
+                        <h1 class="text-black font-[700] text-[50px] leading-[60px] text-center lg:text-left">
+                            Social Gossiping Slowing You Down?
+                        </h1>
+                        <div class="text-[19px] text-[#bbbbbb] font-[300] lg:max-w-[420px] space-y-4">
+                            <p class="text-center lg:text-left">
+                                Staying on top of how your brand is being used is an important aspect to <a href="#" class="underline text-[#191919]">protect your identity and reputation</a>.
+                            </p>
+                            <p class="text-left">
+                                Our sophisticated <a href="#" class="underline text-[#191919]">threat monitoring</a> system enables us to <a href="#" class="underline text-[#191919]">quickly identify threats</a> towards your brand and deal with them to <a href="#" class="underline text-[#191919]">prevent damage</a> to your reputation.
+                            </p>
+                            <p class="text-center lg:text-left">The most common threats we encounter:</p>
+
+                            <div class="text-center whitespace-nowrap mx-auto lg:max-w-[500px] sm:max-w-[690px] flex flex-wrap gap-1.5 lg:items-start lg:content-start lg:justify-start sm:items-start sm:justify-center sm:content-start  max-w-[360px] justify-center items-start content-start">
+                                <div class="text-black text-sm leading-6 border bg-orange-50 px-4 py-1 rounded-[42.4px] border-solid border-amber-200">
+                                    Brand Impersonation
+                                </div>
+                                <div class="text-black text-sm leading-6 border bg-amber-50 px-4 py-1 rounded-[42.4px] border-solid border-yellow-300">
+                                    Compromised Account
+                                </div>
+                                <div class="text-black text-sm leading-6 border bg-orange-50 px-4 py-1 rounded-[42.4px] border-solid border-amber-200">
+                                    Scams
+                                </div>
+                                <div class="text-black text-sm leading-6 border bg-slate-50 px-4 py-1 rounded-[42.4px] border-solid border-blue-200">
+                                    Hi-jacked Posts
+                                </div>
+                                <div class="text-black text-sm leading-6 border bg-amber-50 px-4 py-1 rounded-[42.4px] border-solid border-yellow-300">
+                                    Bad Sentiment
+                                </div>
+                                <div class="text-black text-sm leading-6 border bg-pink-50 px-4 py-1 rounded-[42.4px] border-solid border-pink-300">
+                                    Bad Reviews
+                                </div>
+                                <div class="text-black text-sm leading-6 border bg-stone-50  px-4 py-1 rounded-[42.4px] border-solid border-neutral-300">
+                                    Competitor Envy
+                                </div>
+                                <div class="text-black text-sm leading-6 border bg-slate-50  px-4 py-1 rounded-[42.4px] border-solid border-blue-200">
+                                    False Media
+                                </div>
+                                <div class="text-black text-sm leading-6 border bg-pink-50 px-4 py-1 rounded-[42.4px] border-solid border-rose-300">
+                                    Low Social Authority
+                                </div>
+                                <div class="text-black text-sm leading-6 border bg-purple-50 px-4 py-1 rounded-[42.4px] border-solid border-purple-300">
+                                    Information Inaccuracy
+                                </div>
+                                <div class="text-black text-sm leading-6 border bg-fuchsia-50 px-4 py-1 rounded-[42.4px] border-solid border-fuchsia-300">
+                                    Missed Messages
+                                </div>
+                            </div>
+                            
+                            <p class="text-center lg:text-left">The most common threats we encounter:</p>
+                        </div>
+                        <div class="w-full sm:w-fit flex justify-center items-center pt-2">
+                            <a href="#" class="block px-[38px] sm:px-[55px] py-[23px] sm:py-[28px] rounded-[20px] bg-[#3482FF] text-white text-[16px] font-[600] text-center w-full">Protect Your Brand</a>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section class="relative w-full h-full flex flex-col items-center justify-center mt-[150px] lg:mt-0 bg-[#2D2D48] py-[120px]">
+        <div class="w-full h-auto mx-auto flex flex-col justify-center items-center space-y-4">
+            <p class="text-[#F89E52] font-[500] text-[20px] text-center">
+                Visually Impressive
+            </p>
+            <h1 class="text-white font-[700] text-[45px] lg:text-[52px] leading-[60px] text-center">
+                We Can't Wait To<br> Redefine Your Brand
+            </h1>
+        </div>
+        <div class="swiper mySwiper2" id="swiper2">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <figure>
+                        <img src="images/img/swiper2/1.png" alt="">
+                    </figure>
+                    <figure class="pt-4">
+                        <img src="images/img/swiper2/4.png" alt="">
+                    </figure>
+                </div>
+                <div class="swiper-slide">
+                    <figure>
+                        <img src="images/img/swiper2/2.png" alt="">
+                    </figure>
+                    <figure class="pt-4">
+                        <img src="images/img/swiper2/6.png" alt="">
+                    </figure>
+                </div>
+                <div class="swiper-slide">
+                    <figure>
+                        <img src="images/img/swiper2/3.png" alt="">
+                    </figure>
+                    <figure class="pt-4">
+                        <img src="images/img/swiper2/5.png" alt="">
+                    </figure>
+                </div>
+                <div class="swiper-slide">
+                    <figure>
+                        <img src="images/img/swiper2/1.png" alt="">
+                    </figure>
+                    <figure class="pt-4">
+                        <img src="images/img/swiper2/4.png" alt="">
+                    </figure>
+                </div>
+                <div class="swiper-slide">
+                    <figure>
+                        <img src="images/img/swiper2/2.png" alt="">
+                    </figure>
+                    <figure class="pt-4">
+                        <img src="images/img/swiper2/6.png" alt="">
+                    </figure>
+                </div>
+                <div class="swiper-slide">
+                    <figure>
+                        <img src="images/img/swiper2/3.png" alt="">
+                    </figure>
+                    <figure class="pt-4">
+                        <img src="images/img/swiper2/5.png" alt="">
+                    </figure>
+                </div>
+            </div>
+        </div>
+        <div class="relative w-[100%] flex lg:flex flex-col space-y-4 mt-[100px] justify-center items-center lg:items-start">
+            <h1 class="text-white font-[700] text-[24px] sm:text-[45px] lg:text-[57px] leading-[62,4px]">What Are You Waiting For?</h1>
+            
+            <div class="bg-red-500 h-auto absolute right-[0%] top-[50%] swiperNavigationBox hidden lg:block w-[200px]">
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+
+            <div class="lg:hidden w-full px-4 flex justify-center items-center">
+                <a href="#" class="px-[38px] sm:px-[55px] py-[23px] sm:py-[28px] rounded-[20px] bg-[#3482FF] text-white text-[16px] font-[600] text-center w-full sm:w-fit mx-auto">Protect Your Brand</a>
+            </div>
+        </div>
+        
+    </section>
+
+    <section class="w-full h-auto lg:h-screen py-[100px] px-4 lg:bg-[url('images/img/company_shape_lg.svg')] bg-[url('images/img/company_shape.svg')] bg-contain bg-no-repeat bg-right">
+        <div class="flex flex-col mx-auto text-center lg:max-w-[1200px] space-y-2">
+            <p class="text-[#F89E52] font-[500] text-[20px] leading-[34px]">
+                Our Company
+            </p>
+            <h1 class="block text-black font-[700] text-[52px] leading-[62.4px] lg:max-w-[807px] mx-auto">
+                We Create Creative Design For Every Web Page
+            </h1>
+            <p class="block text-[#727272] text-[16px] font-[300] leading-[32.6px] mx-auto text-center lg:max-w-[687px]">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.
+            </p>
+        </div>
+
+        <div class="w-fit h-auto flex lg:flex-row flex-col pt-6 mx-auto items-center gap-24">
+            <div class="flex justify-center items-center">
+                <img src="images/img/webcreative.svg">
+            </div>
+            <div class="lg:w-1/2 w-full flex flex-col  lg:items-start items-center gap-4">
+                <div class="lg:w-[318px] max-w-[500px] lg:text-left text-center">
+                    <h1 class="text-gradient text-[50px] font-[700] leading-[60px]">
+                        All Your Questions Are Here
+                    </h1>
+                </div>
+
+                <div class="flex flex-col gap-4 items-start max-w-[500px] text-left mt-6">
+                    <div class="flex gap-4">
+                        <img src="images/icons/check_icon.png" class="h-[24px]"><span class="text-[#959EB6] text-[18px] font-[500] leading-[25,2px]">Seo Quotes to inspire your campaign</span>
+                    </div>
+                    <div class="flex gap-4">
+                        <img src="images/icons/check_icon.png" class="h-[24px]"><span class="text-[#959EB6] text-[18px] font-[500] leading-[25,2px]">Much easier to double your business</span>
+                    </div>
+                    <div class="flex gap-4">
+                        <img src="images/icons/check_icon.png" class="h-[24px]"><span class="text-[#959EB6] text-[18px] font-[500] leading-[25,2px]">Free page speed insights tool to find out exactly</span>
+                    </div>
+                    <div class="flex gap-4">
+                        <img src="images/icons/check_icon.png" class="h-[24px]"><span class="text-[#959EB6] text-[18px] font-[500] leading-[25,2px]">Seo quotes to inspire your campaign</span>
+                    </div>
+                </div>
+
+                <div class="w-full flex lg:justify-start justify-center items-center mt-10">
+                    <a href="#" class="block bg-[#3482FF] text-white text-center rounded-[20px] sm:py-[28px] sm:px-[54px] py-[23px] sm:w-fit w-full">Discover More</a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <section class="w-full h-auto lg:h-screen py-[100px] px-4 bg-gradient-to-b from-[#ffffff] to-[#F4FAFF]">
+        <div class="w-fit h-auto flex lg:flex-row flex-col pt-6 mx-auto items-center lg:gap-24">
+            <div class="flex justify-center items-center">
+                <img src="images/img/developr-img.svg">
+            </div>
+            <div class="lg:w-1/2 w-full flex flex-col lg:items-start items-center gap-4">
+                <div class="flex flex-col lg:text-left text-center gap-y-4 lg:max-w-[600px] w-full">
+                    <p class="text-[#F89E52] lg:text-[20px] text-[18px] font-[500] leading-[34px]">What We Do</p>
+                    <h1 class="text-[#0B0B0B] lg:text-[52px] text-[45px] font-[700] lg:leading-[62px] leading-[54px]">We design and develop web and mobile applications for our clients worldwide</h1>
+                    <p class="lg:text-[19.2px] text-[16px] text-[#727272] font-[300] lg:leading-[32.6px] leading-[27.2px]">
+                        Lorem ipsum dolor sit amet, sed nulla ante amet, elementum tincidunt arcu sed laoreet, natoque ac eget imperdiet. Ac scelerisque nibh dolores consectetuer.
+                    </p>
+                    <div class="lg:flex hidden text-[#999FAE] text-[18px] font-[400] leading-[18px] gap-x-6">
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-square-facebook"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-pinterest-p"></i>
+                        <i class="fa-brands fa-vimeo-v"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="relative w-full h-auto lg:h-screen lg:py-[100px] px-4 bg-[#F2FAFF]">
+        <div class="w-fit h-auto flex lg:flex-row flex-col pt-6 mx-auto items-center lg:gap-24 gap-10">
+            <div class="lg:w-1/2 w-full flex flex-col lg:items-start items-center gap-4 lg:order-1 order-2">
+                <div class="flex flex-col lg:text-left text-center lg:gap-y-4 gap-y-10 lg:max-w-[717px] w-full">
+                    <p class="lg:block hidden text-[#F89E52] lg:text-[20px] text-[18px] font-[500] leading-[34px]">95% Accuracy</p>
+                    <h1 class="text-[#0B0B0B] lg:text-[45px] text-[40px] font-[700] sm:leading-[54px] leading-[48px] text-center lg:text-left">Worldwide Best Digital Marketing Agency</h1>
+                    <p class="lg:text-[19.2px] text-[16px] text-[#727272] font-[300] lg:leading-[32,6px] leading-[27,2px] capitalize lg:w-[446px]">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                    </p>
+                    <div class="hidden sm:flex gap-8 justify-start items-center lg:pl-0 pl-4">
+                        <div class="flex lg:w-[200px] w-full">
+                            <img src="images/icons/rocket_icon.png"><span class="text-[#0B0B0B] text-[18px] leading-[21,6px] font-[600]">Faster order Processing</span>
+                        </div>
+                        <div class="flex lg:w-[200px] w-full">
+                            <img src="images/icons/circle_icon.png"><span class="text-[#0B0B0B] text-[18px] leading-[21,6px] font-[600]">Processing Accuracy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex lg:w-1/2 w-full justify-center items-center lg:order-2 order-1 px-4">
+
+
+                <form method="post" id="form" class="w-full">
+                    <div class="relative w-full border shadow-xl flex flex-col px-12 py-12 rounded-3xl border-solid border-zinc-100 max-md:px-5 bg-white">
+                        <h1 class="text-center lg:block hidden text-[#0B0B0B] text-[30px] font-[500] py-4">Get a Consultation</h1>
+                        <h1 class="text-left lg:hidden block text-[#0B0B0B] text-[28px] font-[500] leading-[30px] py-4">Free Consultation</h1>
+
+                        <div class="flex flex-col w-full gap-4" id="consultationForm">
+                            <input type="text" placeholder="Name" required id="nameInput" class="text-[#0B0B0B] px-[29px] py-[22.5px] outline-none border border-[#D5D5D5] focus:ring-black focus:border-black rounded-[13px] placeholder-[#0B0B0B] bg-[#FBFDFF] text-[16px]">
+    
+                            <input type="email" placeholder="Email Address" required id="email" class="text-[#0B0B0B] px-[29px] py-[22.5px] outline-none border border-[#D5D5D5] focus:ring-black focus:border-black rounded-[13px] placeholder-[#0B0B0B] bg-[#FBFDFF] text-[16px]">
+    
+                            <input type="tel" placeholder="Phone Number" required id="phone" class="text-[#0B0B0B] px-[29px] py-[22.5px] outline-none border border-[#D5D5D5] focus:ring-black focus:border-black rounded-[13px] placeholder-[#0B0B0B] bg-[#FBFDFF] text-[16px]">
+    
+                            <select id="subject" required class="sm:hidden block w-full pl-[22.5px] py-[22.5px] text-[#0B0B0B] border border-[#D5D5D5] rounded-lg bg-[#FBFDFF] focus:ring-black focus:border-black text-[16px] outline-none">
+                                <option selected>Subject</option>
+                                <option value="Sub2">Subject 2</option>
+                                <option value="Sub3">Subject 3</option>
+                                <option value="Sub4">Subject 4</option>
+                                <option value="Sub5">Subject 5</option>
+                            </select>
+    
+                            <input type="button" value="Pick Best Time To Call" id="openPopupBtn1" class="lg:block hidden bg-[#3482FF] text-white text-center cursor-pointer rounded-[20px] py-[28px]">
+                            <input type="button" value="Consultation" id="openPopupBtn2" class="lg:hidden block bg-[#3482FF] text-white text-center cursor-pointer rounded-[20px] py-[28px]">
+                        </div>
+                    </div>
+
+                    <div id="consultationForm2" class="hidden w-full h-fit absolute inset-1/2 transform -translate-x-1/2 -translate-y-1/2 top-[250px] z-30">
+                        <div class="absolute inset-1/2 transform -translate-x-1/2 lg:w-[500px] sm:w-[70%] w-[90%] -translate-y-1/2  h-fit border shadow-xl flex flex-col px-12 py-12 rounded-3xl border-solid border-zinc-100 max-md:px-5 bg-white">
+                            <div class="text-center w-full">
+                                <h1 class="text-center text-[#0B0B0B] text-[30px] font-[500] pt-4">What’s Your Availability</h1>
+                                <p class="text-[#727272] text-center text-[19.2px] font-[300] leading-[32.6px] pb-4">What’s the best date and time to give you a call?</p>
+                            </div>
+                            <div class="flex flex-col w-full gap-4">
+                                <select id="dateSelect" class="w-full pl-[22.5px] py-[22.5px] text-[#0B0B0B] border border-[#D5D5D5] rounded-lg bg-[#FBFDFF] focus:ring-black focus:border-black text-[16px]">
+                                    <option selected>Select a day</option>
+                                    <option value="Monday, January 22, 2024">Monday, January 22, 2024</option>
+                                    <option value="Monday, January 23, 2024">Tuesday, January 23, 2024</option>
+                                    <option value="Monday, January 24, 2024">Wednesday, January 24, 2024</option>
+                                    <option value="Monday, January 25, 2024">Thursday, January 25, 2024</option>
+                                    <option value="Monday, January 26, 2024">Friday, January 26, 2024</option>
+                                    <option value="Monday, January 27, 2024">Saturday, January 27, 2024</option>
+                                    <option value="Monday, January 28, 2024">Sunday, January 28, 2024</option>
+                                </select>
+                                <select id="timeSelect" class="w-full pl-[22.5px] py-[22.5px] text-[#0B0B0B] border border-[#D5D5D5] rounded-lg bg-[#FBFDFF] focus:ring-black focus:border-black text-[16px]">
+                                    <option selected>Select a time</option>
+                                    <option value="6:00 AM">6:00 AM</option>
+                                    <option value="6:30 AM">6:30 AM</option>
+                                    <option value="7:00 AM">7:00 AM</option>
+                                    <option value="7:30 AM">7:30 AM</option>
+                                    <option value="8:00 AM">8:00 AM</option>
+                                    <option value="8:30 AM">8:30 AM</option>
+                                    <option value="9:00 AM">9:00 AM</option>
+                                    <option value="9:30 AM">9:30 AM</option>
+                                </select>
+                                <input type="button" value="Schedule Appointment" id="openPopup2" class="bg-[#3482FF] text-white text-center cursor-pointer rounded-[20px] py-[28px]">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="consultationForm3" class="hidden absolute inset-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full top-[350px] z-30">
+                        <div class="absolute inset-1/2 transform -translate-x-1/2 -translate-y-1/3 lg:w-2/4 sm:w-2/3 w-[90%] h-fit border shadow-xl flex flex-col px-12 py-12 rounded-3xl border-solid border-zinc-100 max-md:px-5 bg-white">
+                            <div class="text-center w-full">
+                                <h1 class="text-center text-[#0B0B0B] text-[30px] font-[500] pt-4">Additional Details</h1>
+                                <p class="text-[#727272] text-center text-[19.2px] font-[300] leading-[32.6px] pb-4">What’s the best date and time to give you a call?</p>
+                            </div>
+                            <div class="flex flex-col w-full gap-4">
+                                <select id="expectationSelect" class="w-full pl-[22.5px] py-[22.5px] text-[#0B0B0B] border border-[#D5D5D5] rounded-lg bg-[#FBFDFF] focus:ring-black focus:border-black text-[16px]">
+                                    <option selected>What Are You Looking For?</option>
+                                    <option value="Grow Followers">Grow Followers</option>
+                                    <option value="Increase Leads">Increase Leads</option>
+                                    <option value="Strengthen Engagement">Strengthen Engagement</option>
+                                    <option value="Built Brand Awareness">Built Brand Awareness</option>
+                                    <option value="Learn More About Social Media">Learn More About Social Media</option>
+                                    <option value="Basic Presance">Basic Presance</option>
+                                </select>
+                    
+                                <p class="text-[#727272] text-center text-[19.2px] font-[300] leading-[32.6px] py-3">Which platforms are you currently using and which platforms would you like to target?</p>
+                    
+                                <div class="flex flex-col py-[16px]  items-center gap-[16px] self-stretch" id="platformSelect">
+                                    <div class="flex justify-between self-stretch text-[#0B0B0B] text-[16px] font-[400]">
+                                        <h3 class="block sm:w-[144px] w-[100px]">Platform</h3>
+                                        <h3 class="block sm:w-[44px] w-[22px]">Have</h3>
+                                        <h3 class="block sm:w-[44px] w-[22px]">Want</h3>
+                                        <h3 class="block text-center sm:w-[200px] w-[100px]">Handel/Link</h3>
+                                    </div>
+                                    <div class="flex justify-between items-center self-stretch">
+                                        <div class="flex gap-3 sm:w-[144px] w-[100px]">
+                                            <img src="images/icons/form_icons/fb.png" class="h-[24px] w-[24px]">
+                                            <span class="text-[#4E6CB4] sm:text-[16px] text-[13px] font-[500]">Facebook</span>
+                                        </div>
+                                        <input type="checkbox" name="platform['facebook']['have']" id="fbHave" class="checkbox sm:w-[44px] sm:h-[44px] w-[22px] h-[22px] justify-center items-center rounded-[10px] border-[#D5D5D5] border bg-[#FBFDFF]" data-platform="facebook" data-action="have">
+                                        <input type="checkbox" name="platform['facebook']['want']" id="fbWant" class="checkbox sm:w-[44px] sm:h-[44px] w-[22px] h-[22px] justify-center items-center rounded-[10px] border-[#D5D5D5] border bg-[#FBFDFF]" data-platform="facebook" data-action="want">
+                                        <input type="text" name="fb_handel_link" placeholder="@myFacebbokAccount" class="bg-[#FBFDFF] sm:text-[16px] text-[11px] text-center border-[#D5D5D5] border sm:w-[200px] w-[90px] sm:py-[22.5px] py-[4px] px-[4px] rounded-[13px] outline-none placeholder:text-black">
+                                    </div>
+                                    <div class="flex justify-between items-center self-stretch">
+                                        <div class="flex gap-3 sm:w-[144px] w-[100px]">
+                                            <img src="images/icons/form_icons/insta.png" class="h-[24px] w-[24px]">
+                                            <span class="text-[#EE4983] sm:text-[16px] text-[13px] font-[500]">Instagram</span>
+                                        </div>
+                                        <input type="checkbox" name="platform['instagram']['have']" id="igHave" class="checkbox sm:w-[44px] sm:h-[44px] w-[22px] h-[22px] justify-center items-center rounded-[10px] border-[#D5D5D5] border bg-[#FBFDFF]" data-platform="instagram" data-action="have">
+                                        <input type="checkbox" name="platform['instagram']['want']" id="igWant" class="checkbox sm:w-[44px] sm:h-[44px] w-[22px] h-[22px] justify-center items-center rounded-[10px] border-[#D5D5D5] border bg-[#FBFDFF]" data-platform="instagram" data-action="want">
+                                        <input type="text" name="ig_handel_link" placeholder="Paste here" class="bg-[#FBFDFF] sm:text-[16px] text-[11px] text-center border-[#D5D5D5] border sm:w-[200px] w-[90px] sm:py-[22.5px] py-[4px] px-[4px] rounded-[13px] outline-none placeholder:text-black">
+                                    </div>
+                                    <div class="flex justify-between items-center self-stretch">
+                                        <div class="flex gap-3 sm:w-[144px] w-[100px]">
+                                            <img src="images/icons/form_icons/linkedin.png" class="h-[24px] w-[24px]">
+                                            <span class="text-[#0478B5] sm:text-[16px] text-[13px] font-[500]">Linkedin</span>
+                                        </div>
+                                        <input type="checkbox" name="platform['linkedin']['have']" id="linkedinHave" class="checkbox sm:w-[44px] sm:h-[44px] w-[22px] h-[22px] justify-center items-center rounded-[10px] border-[#D5D5D5] border bg-[#FBFDFF]" data-platform="linkedin" data-action="have">
+                                        <input type="checkbox" name="platform['linkedin']['want']" id="linkedinWant" class="checkbox sm:w-[44px] sm:h-[44px] w-[22px] h-[22px] justify-center items-center rounded-[10px] border-[#D5D5D5] border bg-[#FBFDFF]" data-platform="linkedin" data-action="want">
+                                        <input type="text" name="ig_handel_link" placeholder="Paste here" class="bg-[#FBFDFF] sm:text-[16px] text-[11px] text-center border-[#D5D5D5] border sm:w-[200px] w-[90px] sm:py-[22.5px] py-[4px] px-[4px] rounded-[13px] outline-none placeholder:text-black">
+                                    </div>
+                                    <div class="flex justify-between items-center self-stretch">
+                                        <div class="flex gap-3 sm:w-[144px] w-[100px]">
+                                            <img src="images/icons/form_icons/google.png" class="h-[24px] w-[24px]">
+                                            <span class="text-[#4989F5] lg:text-[16px] text-[13px] font-[500]">Google</span>
+                                        </div>
+                                        <input type="checkbox" name="platform['google']['have']" id="googleHave" class="checkbox sm:w-[44px] sm:h-[44px] w-[22px] h-[22px] justify-center items-center rounded-[10px] border-[#D5D5D5] border bg-[#FBFDFF]" data-platform="google" data-action="have">
+                                        <input type="checkbox" name="platform['google']['want']" id="googleWant" class="checkbox sm:w-[44px] sm:h-[44px] w-[22px] h-[22px] justify-center items-center rounded-[10px] border-[#D5D5D5] border bg-[#FBFDFF]" data-platform="google" data-action="want">
+                                        <input type="text" name="ig_handel_link" placeholder="Paste here" class="bg-[#FBFDFF] sm:text-[16px] text-[11px] text-center border-[#D5D5D5] border sm:w-[200px] w-[90px] sm:py-[22.5px] py-[4px] px-[4px] rounded-[13px] outline-none placeholder:text-black">
+                                    </div>
+                                    <div class="flex justify-between items-center self-stretch">
+                                        <div class="flex gap-3 sm:w-[144px] w-[100px]">
+                                            <img src="images/icons/form_icons/X.png" class="h-[24px] w-[24px]">
+                                            <span class="text-[#000000] sm:text-[16px] text-[13px] font-[500]">X/Twitter</span>
+                                        </div>
+                                        <input type="checkbox" name="platform['twitter']['have']" id="twitterHave" class="checkbox sm:w-[44px] sm:h-[44px] w-[22px] h-[22px] justify-center items-center rounded-[10px] border-[#D5D5D5] border bg-[#FBFDFF]" data-platform="twitter/X" data-action="have">
+                                        <input type="checkbox" name="platform['twitter']['want']" id="twitterWant" class="checkbox sm:w-[44px] sm:h-[44px] w-[22px] h-[22px] justify-center items-center rounded-[10px] border-[#D5D5D5] border bg-[#FBFDFF]" data-platform="twitter/X" data-action="want">
+                                        <input type="text" name="ig_handel_link" placeholder="Paste here" class="bg-[#FBFDFF] sm:text-[16px] text-[11px] text-center border-[#D5D5D5] border sm:w-[200px] w-[90px] sm:py-[22.5px] py-[4px] px-[4px] rounded-[13px] outline-none placeholder:text-black">
+                                    </div>
+                                    <div class="flex justify-between items-center self-stretch">
+                                        <div class="flex gap-3 sm:w-[144px] w-[100px]">
+                                            <img src="images/icons/form_icons/yt.png" class="h-[24px] w-[24px]">
+                                            <span class="text-[#E42C2D] sm:text-[16px] text-[13px] font-[500]">YouTube</span>
+                                        </div>
+                                        <input type="checkbox" name="platform['youtube']['have']" id="ytHave" class="checkbox sm:w-[44px] sm:h-[44px] w-[22px] h-[22px] justify-center items-center rounded-[10px] border-[#D5D5D5] border bg-[#FBFDFF]" data-platform="youtube" data-action="have">
+                                        <input type="checkbox" name="platform['youtube']['want']" id="ytWant" class="checkbox sm:w-[44px] sm:h-[44px] w-[22px] h-[22px] justify-center items-center rounded-[10px] border-[#D5D5D5] border bg-[#FBFDFF]" data-platform="youtube" data-action="want">
+                                        <input type="text" name="ig_handel_link" placeholder="Paste here" class="bg-[#FBFDFF] sm:text-[16px] text-[11px] text-center border-[#D5D5D5] border sm:w-[200px] w-[90px] sm:py-[22.5px] py-[4px] px-[4px] rounded-[13px] outline-none placeholder:text-black">
+                                    </div>
+                                    <div class="flex justify-between items-center self-stretch">
+                                        <div class="flex gap-3 sm:w-[144px] w-[100px]">
+                                            <img src="images/icons/form_icons/pint.png" class="h-[24px] w-[24px]">
+                                            <span class="text-[#EF4A48] sm:text-[16px] text-[13px] font-[500]">Pinterest</span>
+                                        </div>
+                                        <input type="checkbox" name="platform['pinterest']['have']" id="pinHave" class="checkbox sm:w-[44px] sm:h-[44px] w-[22px] h-[22px] justify-center items-center rounded-[10px] border-[#D5D5D5] border bg-[#FBFDFF]" data-platform="pinterest" data-action="have">
+                                        <input type="checkbox" name="platform['pinterest']['want']" id="pinWant" class="checkbox sm:w-[44px] sm:h-[44px] w-[22px] h-[22px] justify-center items-center rounded-[10px] border-[#D5D5D5] border bg-[#FBFDFF]" data-platform="pinterest" data-action="want">
+                                        <input type="text" name="ig_handel_link" placeholder="Paste here" class="bg-[#FBFDFF] sm:text-[16px] text-[11px] text-center border-[#D5D5D5] border sm:w-[200px] w-[90px] sm:py-[22.5px] py-[4px] px-[4px] rounded-[13px] outline-none placeholder:text-black">
+                                    </div>
+                                </div>
+                    
+                                <textarea name="comments" id="comments" class="mt-10 h-[150px] border border-[#D5D5D5] bg-[#FBFDFF] rounded-[13px] py-[22.5px] px-[29px] placeholder:text-black outline-none" placeholder="What Are You Looking For?"></textarea>
+                                        
+                                <input type="submit" value="Send Additional Details" id="submitBtn" class="bg-[#3482FF] text-white text-center cursor-pointer rounded-[20px] py-[28px]">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div class="overlay hidden"></div>
+
+    <section class="bg-gradient-to-b from-[#F2FAFF] to-[#ffffff] lg:h-screen h-auto w-full pt-[120px] lg:pt-[0] pb-[120px] lg:px-[105px] px-[24px] flex flex-col justify-center items-center lg:space-y-20 space-y-10">
+        <div class="flex flex-col mx-auto text-center gap-[30px] self-stretch lg:max-w-[717.5px] px-[15px]">
+            <h1 class="text-[#0B0B0B] lg:text-[52px] text-[45px] font-[700] lg:leading-[62.4px] leading-[54px]">Meet The Squad</h1>
+            <p class="text-[#666] text-[16px] lg:text-[19.2px] lg:font-[300] font-[400] leading-[27.2px] lg:leading-[32.6px]">Lorem ipsum dolor sit amet, sed nulla ante amet, elementum tincidunt arcu sed laoreet, natoque ac eget.</p>
+        </div>
+
+
+        <div class="swiper3 swiper mySwiper3 relative">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide relative">
+                    <div class="bg-white flex flex-col text-left justify-center absolute bottom-0 left-0 gap-[4.99px] py-[24px] px-[30px] rounded-tr-[20px] sm:max-w-fit w-2/3">
+                        <h2 class="text-[#0B0B0B] font-[700] text-[16px] leading-[19.2px]">Ryan Vetrovs</h2>
+                        <p class="text-[#737373] text-[15px] font-[400] leading-[25.5px]">CEO Kawasaki Inc.</p>
+                    </div>
+                    <img src="images/img/swiper3/1.png">
+                </div>
+
+                <div class="swiper-slide relative">
+                    <div class="bg-white flex flex-col text-left justify-center absolute bottom-0 left-0 gap-[4.99px] py-[24px] px-[30px] rounded-tr-[20px] sm:max-w-fit w-2/3">
+                        <h2 class="text-[#0B0B0B] font-[700] text-[16px] leading-[19.2px]">Emerson Saris</h2>
+                        <p class="text-[#737373] text-[15px] font-[400] leading-[25.5px]">CEO Kawasaki Inc.</p>
+                    </div>
+                    <img src="images/img/swiper3/2.png">
+                </div>
+
+                <div class="swiper-slide relative">
+                    <div class="bg-white flex flex-col text-left justify-center absolute bottom-0 left-0 gap-[4.99px] py-[24px] px-[30px] rounded-tr-[20px] sm:max-w-fit w-2/3">
+                        <h2 class="text-[#0B0B0B] font-[700] text-[16px] leading-[19.2px]">Lindsey Schleifer</h2>
+                        <p class="text-[#737373] text-[15px] font-[400] leading-[25.5px]">CEO Kawasaki Inc.</p>
+                    </div>
+                    <img src="images/img/swiper3/3.png">
+                </div>
+
+                <div class="swiper-slide relative">
+                    <div class="bg-white flex flex-col text-left justify-center absolute bottom-0 left-0 gap-[4.99px] py-[24px] px-[30px] rounded-tr-[20px] sm:max-w-fit w-2/3">
+                        <h2 class="text-[#0B0B0B] font-[700] text-[16px] leading-[19.2px]">Ryan Vetrovs</h2>
+                        <p class="text-[#737373] text-[15px] font-[400] leading-[25.5px]">CEO Kawasaki Inc.</p>
+                    </div>
+                    <img src="images/img/swiper3/1.png">
+                </div>
+
+                <div class="swiper-slide relative">
+                    <div class="bg-white flex flex-col text-left justify-center absolute bottom-0 left-0 gap-[4.99px] py-[24px] px-[30px] rounded-tr-[20px] sm:max-w-fit w-2/3">
+                        <h2 class="text-[#0B0B0B] font-[700] text-[16px] leading-[19.2px]">Emerson Saris</h2>
+                        <p class="text-[#737373] text-[15px] font-[400] leading-[25.5px]">CEO Kawasaki Inc.</p>
+                    </div>
+                    <img src="images/img/swiper3/2.png">
+                </div>
+
+                <div class="swiper-slide relative">
+                    <div class="bg-white flex flex-col text-left justify-center absolute bottom-0 left-0 gap-[4.99px] py-[24px] px-[30px] rounded-tr-[20px] sm:max-w-fit w-2/3">
+                        <h2 class="text-[#0B0B0B] font-[700] text-[16px] leading-[19.2px]">Lindsey Schleifer</h2>
+                        <p class="text-[#737373] text-[15px] font-[400] leading-[25.5px]">CEO Kawasaki Inc.</p>
+                    </div>
+                    <img src="images/img/swiper3/3.png">
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+    </section>
+
+    <section class="w-full lg:h-screen h-full flex lg:flex-row flex-col lg:px-[105px] px-4 py-[120px] justify-center items-center gap-8">
+        <div class="flex flex-col lg:max-w-[615px] w-full h-auto">
+            <img src="images/img/quest_woman.png" class="w-[615px] mx-auto">
+            <div class="flex flex-col gap-[20px]">
+                <h1 class="text-[#0B0B0B] font-[700] lg:leading-[62.4px] sm:leading-[54px] leading-[42px] lg:text-[52px] sm:text-[45px] text-[35px]">All Your Questions Are Here</h1>
+                <h2 class="text-gradient text-[24px] font-[500] leading-[28.8px]">& Knock Me Directly to Know More</h2>
+                <p class="text-[#727272] lg:text-[19.2px] text-[16px] font-[300] lg:leading-[32.6px] leading-[27.2px] capitalize">
+                    Lorem ipsum dolor sit amet, sed nulla ante amet, elementum tincidunt arcu sed laoreet, natoque ac eget imperdiet. Ac scelerisque nibh.
+                </p>
+            </div>
+        </div>
+        <div class="flex flex-col justify-center lg:max-w-[615px] items-start lg:px-2 space-y-4">
+            <div class="flex flex-col w-full bg-white shadow-lg shadow-black/10 rounded-[20px] border border-[#F4F4F4]">
+                <div class="flex justify-start items-center self-stretch gap-4 pl-[20px] pr-[40px] py-[40px] border-b border-[#F4F4F4]">
+                    <img src="images/icons/plus_icon.png" class="h-[37px] w-[37px]"><h1 class="text-[18px] font-[700] leading-[21.6px] text-[#0B0B0B]">What's the difference between Pro and Free?</h1>
+                </div>
+                <div class="pl-[75px] pr-[40px] py-[20px]">
+                    <p class="capitalize text-[#666] font-[400] text-[16px] leading-[27.2px]">Lorem ipsum dolor sit amet, sed nulla ante amet, elementum tincidunt arcu sed laoreet, natoque ac eget imperdiet. Ac scelerisque nibh dolores consectetuer,</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col w-full bg-white shadow-lg shadow-black/10 rounded-[20px] border border-[#F4F4F4]">
+                <div class="flex justify-start items-center self-stretch gap-4 pl-[20px] pr-[40px] py-[40px]">
+                    <img src="images/icons/plus_icon.png" class="h-[37px] w-[37px]"><h1 class="text-[18px] font-[700] leading-[21.6px] text-[#0B0B0B]">What's the difference between Pro and Free?</h1>
+                </div>
+            </div>
+
+            <div class="flex flex-col w-full bg-white shadow-lg shadow-black/10 rounded-[20px] border border-[#F4F4F4]">
+                <div class="flex justify-start items-center self-stretch gap-4 pl-[20px] pr-[40px] py-[40px]">
+                    <img src="images/icons/plus_icon.png" class="h-[37px] w-[37px]"><h1 class="text-[18px] font-[700] leading-[21.6px] text-[#0B0B0B]">What's the difference between Pro and Free?</h1>
+                </div>
+            </div>
+
+            <div class="flex flex-col w-full bg-white shadow-lg shadow-black/10 rounded-[20px] border border-[#F4F4F4]">
+                <div class="flex justify-start items-center self-stretch gap-4 pl-[20px] pr-[40px] py-[40px]">
+                    <img src="images/icons/plus_icon.png" class="h-[37px] w-[37px]"><h1 class="text-[18px] font-[700] leading-[21.6px] text-[#0B0B0B]">What's the difference between Pro and Free?</h1>
+                </div>
+            </div>
+
+            
+        </div>
+        
+    </section>
+
+    <!-- Script's -->
+     <script src="js/script.js"></script>
+     <!-- Form Script -->
+     <script src="js/showForm.js"></script>
+     <!-- Counter Script -->
+    <script src="js/counter.js"></script>
+
+
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+        const swiper = new Swiper(".mySwiper", {
+            slidesPerView: "auto",
+            spaceBetween: 10,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                640: {
+                slidesPerView: 1,
+                spaceBetween: 10,
+                },
+                768: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+                },
+                1024: {
+                slidesPerView: 2.2,
+                spaceBetween: 10,
+                },
+            },
+        });
+    </script>
+    <!-- Initialize Swiper 2 -->
+    <script>
+        const swiper2 = new Swiper(".mySwiper2", {
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            slidesPerView: "auto",
+            spaceBetween: 20,
+            lazyLoading: true,
+            loop: true,
+            autoplay: {
+                delay: 8000,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                640: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                },
+                768: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+                },
+                1024: {
+                slidesPerView: 4,
+                spaceBetween: 20,
+                },
+            },
+        });
+    </script>
+    <!-- Initialize Swiper 3 -->
+    <script>
+        var swiper3 = new Swiper(".mySwiper3", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                640: {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                },
+                768: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+                },
+                1024: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+                },
+            },
+        });
+    </script>
+
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/4e3764ce5b.js" crossorigin="anonymous"></script>
+
+    <!-- Hamburger menu -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+
+    
+</body>
+</html>
