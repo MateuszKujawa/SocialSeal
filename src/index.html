@@ -868,12 +868,12 @@
             <div class="flex lg:w-1/2 w-full justify-center items-center lg:order-2 order-1 px-4">
 
 
-                <form method="post" id="form" class="w-full">
+                <form id="consultationForm" class="w-full">
                     <div class="relative w-full border shadow-xl flex flex-col px-12 py-12 rounded-3xl border-solid border-zinc-100 max-md:px-5 bg-white">
                         <h1 class="text-center lg:block hidden text-[#0B0B0B] text-[30px] font-[500] py-4">Get a Consultation</h1>
                         <h1 class="text-left lg:hidden block text-[#0B0B0B] text-[28px] font-[500] leading-[30px] py-4">Free Consultation</h1>
 
-                        <div class="flex flex-col w-full gap-4" id="consultationForm">
+                        <div class="flex flex-col w-full gap-4">
                             <input type="text" placeholder="Name" required id="nameInput" class="text-[#0B0B0B] px-[29px] py-[22.5px] outline-none border border-[#D5D5D5] focus:ring-black focus:border-black rounded-[13px] placeholder-[#0B0B0B] bg-[#FBFDFF] text-[16px]">
     
                             <input type="email" placeholder="Email Address" required id="email" class="text-[#0B0B0B] px-[29px] py-[22.5px] outline-none border border-[#D5D5D5] focus:ring-black focus:border-black rounded-[13px] placeholder-[#0B0B0B] bg-[#FBFDFF] text-[16px]">
@@ -888,142 +888,185 @@
                                 <option value="Sub5">Subject 5</option>
                             </select>
     
-                            <input type="button" value="Pick Best Time To Call" id="openPopupBtn1" class="lg:block hidden bg-[#3482FF] text-white text-center cursor-pointer rounded-[20px] py-[28px]">
-                            <input type="button" value="Consultation" id="openPopupBtn2" class="lg:hidden block bg-[#3482FF] text-white text-center cursor-pointer rounded-[20px] py-[28px]">
-                        </div>
-                    </div>
-
-                    <div id="consultationForm2" class="hidden w-full h-fit absolute inset-1/2 transform -translate-x-1/2 -translate-y-1/2 top-[250px] z-30">
-                        <div class="absolute inset-1/2 transform -translate-x-1/2 lg:w-[500px] sm:w-[70%] w-[90%] -translate-y-1/2  h-fit border shadow-xl flex flex-col px-12 py-12 rounded-3xl border-solid border-zinc-100 max-md:px-5 bg-white">
-                            <div class="text-center w-full">
-                                <h1 class="text-center text-[#0B0B0B] text-[30px] font-[500] pt-4">What’s Your Availability</h1>
-                                <p class="text-[#727272] text-center text-[19.2px] font-[300] leading-[32.6px] pb-4">What’s the best date and time to give you a call?</p>
-                            </div>
-                            <div class="flex flex-col w-full gap-4">
-                                <select id="dateSelect" class="w-full pl-[22.5px] py-[22.5px] text-[#0B0B0B] border border-[#D5D5D5] rounded-lg bg-[#FBFDFF] focus:ring-black focus:border-black text-[16px]">
-                                    <option selected>Select a day</option>
-                                    <option value="Monday, January 22, 2024">Monday, January 22, 2024</option>
-                                    <option value="Monday, January 23, 2024">Tuesday, January 23, 2024</option>
-                                    <option value="Monday, January 24, 2024">Wednesday, January 24, 2024</option>
-                                    <option value="Monday, January 25, 2024">Thursday, January 25, 2024</option>
-                                    <option value="Monday, January 26, 2024">Friday, January 26, 2024</option>
-                                    <option value="Monday, January 27, 2024">Saturday, January 27, 2024</option>
-                                    <option value="Monday, January 28, 2024">Sunday, January 28, 2024</option>
-                                </select>
-                                <select id="timeSelect" class="w-full pl-[22.5px] py-[22.5px] text-[#0B0B0B] border border-[#D5D5D5] rounded-lg bg-[#FBFDFF] focus:ring-black focus:border-black text-[16px]">
-                                    <option selected>Select a time</option>
-                                    <option value="6:00 AM">6:00 AM</option>
-                                    <option value="6:30 AM">6:30 AM</option>
-                                    <option value="7:00 AM">7:00 AM</option>
-                                    <option value="7:30 AM">7:30 AM</option>
-                                    <option value="8:00 AM">8:00 AM</option>
-                                    <option value="8:30 AM">8:30 AM</option>
-                                    <option value="9:00 AM">9:00 AM</option>
-                                    <option value="9:30 AM">9:30 AM</option>
-                                </select>
-                                <input type="button" value="Schedule Appointment" id="openPopup2" class="bg-[#3482FF] text-white text-center cursor-pointer rounded-[20px] py-[28px]">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="consultationForm3" class="hidden absolute inset-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full top-[350px] z-30">
-                        <div class="absolute inset-1/2 transform -translate-x-1/2 -translate-y-1/3 lg:w-2/4 sm:w-2/3 w-[90%] h-fit border shadow-xl flex flex-col px-12 py-12 rounded-3xl border-solid border-zinc-100 max-md:px-5 bg-white">
-                            <div class="text-center w-full">
-                                <h1 class="text-center text-[#0B0B0B] text-[30px] font-[500] pt-4">Additional Details</h1>
-                                <p class="text-[#727272] text-center text-[19.2px] font-[300] leading-[32.6px] pb-4">What’s the best date and time to give you a call?</p>
-                            </div>
-                            <div class="flex flex-col w-full gap-4">
-                                <select id="expectationSelect" class="w-full pl-[22.5px] py-[22.5px] text-[#0B0B0B] border border-[#D5D5D5] rounded-lg bg-[#FBFDFF] focus:ring-black focus:border-black text-[16px]">
-                                    <option selected>What Are You Looking For?</option>
-                                    <option value="Grow Followers">Grow Followers</option>
-                                    <option value="Increase Leads">Increase Leads</option>
-                                    <option value="Strengthen Engagement">Strengthen Engagement</option>
-                                    <option value="Built Brand Awareness">Built Brand Awareness</option>
-                                    <option value="Learn More About Social Media">Learn More About Social Media</option>
-                                    <option value="Basic Presance">Basic Presance</option>
-                                </select>
-                    
-                                <p class="text-[#727272] text-center text-[19.2px] font-[300] leading-[32.6px] py-3">Which platforms are you currently using and which platforms would you like to target?</p>
-                    
-                                <div class="flex flex-col py-[16px]  items-center gap-[16px] self-stretch" id="platformSelect">
-                                    <div class="flex justify-between self-stretch text-[#0B0B0B] text-[16px] font-[400]">
-                                        <h3 class="block sm:w-[144px] w-[100px]">Platform</h3>
-                                        <h3 class="block sm:w-[44px] w-[22px]">Have</h3>
-                                        <h3 class="block sm:w-[44px] w-[22px]">Want</h3>
-                                        <h3 class="block text-center sm:w-[200px] w-[100px]">Handel/Link</h3>
-                                    </div>
-                                    <div class="flex justify-between items-center self-stretch">
-                                        <div class="flex gap-3 sm:w-[144px] w-[100px]">
-                                            <img src="images/icons/form_icons/fb.png" class="h-[24px] w-[24px]">
-                                            <span class="text-[#4E6CB4] sm:text-[16px] text-[13px] font-[500]">Facebook</span>
-                                        </div>
-                                        <input type="checkbox" name="platform['facebook']['have']" id="fbHave" class="checkbox sm:w-[44px] sm:h-[44px] w-[22px] h-[22px] justify-center items-center rounded-[10px] border-[#D5D5D5] border bg-[#FBFDFF]" data-platform="facebook" data-action="have">
-                                        <input type="checkbox" name="platform['facebook']['want']" id="fbWant" class="checkbox sm:w-[44px] sm:h-[44px] w-[22px] h-[22px] justify-center items-center rounded-[10px] border-[#D5D5D5] border bg-[#FBFDFF]" data-platform="facebook" data-action="want">
-                                        <input type="text" name="fb_handel_link" placeholder="@myFacebbokAccount" class="bg-[#FBFDFF] sm:text-[16px] text-[11px] text-center border-[#D5D5D5] border sm:w-[200px] w-[90px] sm:py-[22.5px] py-[4px] px-[4px] rounded-[13px] outline-none placeholder:text-black">
-                                    </div>
-                                    <div class="flex justify-between items-center self-stretch">
-                                        <div class="flex gap-3 sm:w-[144px] w-[100px]">
-                                            <img src="images/icons/form_icons/insta.png" class="h-[24px] w-[24px]">
-                                            <span class="text-[#EE4983] sm:text-[16px] text-[13px] font-[500]">Instagram</span>
-                                        </div>
-                                        <input type="checkbox" name="platform['instagram']['have']" id="igHave" class="checkbox sm:w-[44px] sm:h-[44px] w-[22px] h-[22px] justify-center items-center rounded-[10px] border-[#D5D5D5] border bg-[#FBFDFF]" data-platform="instagram" data-action="have">
-                                        <input type="checkbox" name="platform['instagram']['want']" id="igWant" class="checkbox sm:w-[44px] sm:h-[44px] w-[22px] h-[22px] justify-center items-center rounded-[10px] border-[#D5D5D5] border bg-[#FBFDFF]" data-platform="instagram" data-action="want">
-                                        <input type="text" name="ig_handel_link" placeholder="Paste here" class="bg-[#FBFDFF] sm:text-[16px] text-[11px] text-center border-[#D5D5D5] border sm:w-[200px] w-[90px] sm:py-[22.5px] py-[4px] px-[4px] rounded-[13px] outline-none placeholder:text-black">
-                                    </div>
-                                    <div class="flex justify-between items-center self-stretch">
-                                        <div class="flex gap-3 sm:w-[144px] w-[100px]">
-                                            <img src="images/icons/form_icons/linkedin.png" class="h-[24px] w-[24px]">
-                                            <span class="text-[#0478B5] sm:text-[16px] text-[13px] font-[500]">Linkedin</span>
-                                        </div>
-                                        <input type="checkbox" name="platform['linkedin']['have']" id="linkedinHave" class="checkbox sm:w-[44px] sm:h-[44px] w-[22px] h-[22px] justify-center items-center rounded-[10px] border-[#D5D5D5] border bg-[#FBFDFF]" data-platform="linkedin" data-action="have">
-                                        <input type="checkbox" name="platform['linkedin']['want']" id="linkedinWant" class="checkbox sm:w-[44px] sm:h-[44px] w-[22px] h-[22px] justify-center items-center rounded-[10px] border-[#D5D5D5] border bg-[#FBFDFF]" data-platform="linkedin" data-action="want">
-                                        <input type="text" name="ig_handel_link" placeholder="Paste here" class="bg-[#FBFDFF] sm:text-[16px] text-[11px] text-center border-[#D5D5D5] border sm:w-[200px] w-[90px] sm:py-[22.5px] py-[4px] px-[4px] rounded-[13px] outline-none placeholder:text-black">
-                                    </div>
-                                    <div class="flex justify-between items-center self-stretch">
-                                        <div class="flex gap-3 sm:w-[144px] w-[100px]">
-                                            <img src="images/icons/form_icons/google.png" class="h-[24px] w-[24px]">
-                                            <span class="text-[#4989F5] lg:text-[16px] text-[13px] font-[500]">Google</span>
-                                        </div>
-                                        <input type="checkbox" name="platform['google']['have']" id="googleHave" class="checkbox sm:w-[44px] sm:h-[44px] w-[22px] h-[22px] justify-center items-center rounded-[10px] border-[#D5D5D5] border bg-[#FBFDFF]" data-platform="google" data-action="have">
-                                        <input type="checkbox" name="platform['google']['want']" id="googleWant" class="checkbox sm:w-[44px] sm:h-[44px] w-[22px] h-[22px] justify-center items-center rounded-[10px] border-[#D5D5D5] border bg-[#FBFDFF]" data-platform="google" data-action="want">
-                                        <input type="text" name="ig_handel_link" placeholder="Paste here" class="bg-[#FBFDFF] sm:text-[16px] text-[11px] text-center border-[#D5D5D5] border sm:w-[200px] w-[90px] sm:py-[22.5px] py-[4px] px-[4px] rounded-[13px] outline-none placeholder:text-black">
-                                    </div>
-                                    <div class="flex justify-between items-center self-stretch">
-                                        <div class="flex gap-3 sm:w-[144px] w-[100px]">
-                                            <img src="images/icons/form_icons/X.png" class="h-[24px] w-[24px]">
-                                            <span class="text-[#000000] sm:text-[16px] text-[13px] font-[500]">X/Twitter</span>
-                                        </div>
-                                        <input type="checkbox" name="platform['twitter']['have']" id="twitterHave" class="checkbox sm:w-[44px] sm:h-[44px] w-[22px] h-[22px] justify-center items-center rounded-[10px] border-[#D5D5D5] border bg-[#FBFDFF]" data-platform="twitter/X" data-action="have">
-                                        <input type="checkbox" name="platform['twitter']['want']" id="twitterWant" class="checkbox sm:w-[44px] sm:h-[44px] w-[22px] h-[22px] justify-center items-center rounded-[10px] border-[#D5D5D5] border bg-[#FBFDFF]" data-platform="twitter/X" data-action="want">
-                                        <input type="text" name="ig_handel_link" placeholder="Paste here" class="bg-[#FBFDFF] sm:text-[16px] text-[11px] text-center border-[#D5D5D5] border sm:w-[200px] w-[90px] sm:py-[22.5px] py-[4px] px-[4px] rounded-[13px] outline-none placeholder:text-black">
-                                    </div>
-                                    <div class="flex justify-between items-center self-stretch">
-                                        <div class="flex gap-3 sm:w-[144px] w-[100px]">
-                                            <img src="images/icons/form_icons/yt.png" class="h-[24px] w-[24px]">
-                                            <span class="text-[#E42C2D] sm:text-[16px] text-[13px] font-[500]">YouTube</span>
-                                        </div>
-                                        <input type="checkbox" name="platform['youtube']['have']" id="ytHave" class="checkbox sm:w-[44px] sm:h-[44px] w-[22px] h-[22px] justify-center items-center rounded-[10px] border-[#D5D5D5] border bg-[#FBFDFF]" data-platform="youtube" data-action="have">
-                                        <input type="checkbox" name="platform['youtube']['want']" id="ytWant" class="checkbox sm:w-[44px] sm:h-[44px] w-[22px] h-[22px] justify-center items-center rounded-[10px] border-[#D5D5D5] border bg-[#FBFDFF]" data-platform="youtube" data-action="want">
-                                        <input type="text" name="ig_handel_link" placeholder="Paste here" class="bg-[#FBFDFF] sm:text-[16px] text-[11px] text-center border-[#D5D5D5] border sm:w-[200px] w-[90px] sm:py-[22.5px] py-[4px] px-[4px] rounded-[13px] outline-none placeholder:text-black">
-                                    </div>
-                                    <div class="flex justify-between items-center self-stretch">
-                                        <div class="flex gap-3 sm:w-[144px] w-[100px]">
-                                            <img src="images/icons/form_icons/pint.png" class="h-[24px] w-[24px]">
-                                            <span class="text-[#EF4A48] sm:text-[16px] text-[13px] font-[500]">Pinterest</span>
-                                        </div>
-                                        <input type="checkbox" name="platform['pinterest']['have']" id="pinHave" class="checkbox sm:w-[44px] sm:h-[44px] w-[22px] h-[22px] justify-center items-center rounded-[10px] border-[#D5D5D5] border bg-[#FBFDFF]" data-platform="pinterest" data-action="have">
-                                        <input type="checkbox" name="platform['pinterest']['want']" id="pinWant" class="checkbox sm:w-[44px] sm:h-[44px] w-[22px] h-[22px] justify-center items-center rounded-[10px] border-[#D5D5D5] border bg-[#FBFDFF]" data-platform="pinterest" data-action="want">
-                                        <input type="text" name="ig_handel_link" placeholder="Paste here" class="bg-[#FBFDFF] sm:text-[16px] text-[11px] text-center border-[#D5D5D5] border sm:w-[200px] w-[90px] sm:py-[22.5px] py-[4px] px-[4px] rounded-[13px] outline-none placeholder:text-black">
-                                    </div>
-                                </div>
-                    
-                                <textarea name="comments" id="comments" class="mt-10 h-[150px] border border-[#D5D5D5] bg-[#FBFDFF] rounded-[13px] py-[22.5px] px-[29px] placeholder:text-black outline-none" placeholder="What Are You Looking For?"></textarea>
-                                        
-                                <input type="submit" value="Send Additional Details" id="submitBtn" class="bg-[#3482FF] text-white text-center cursor-pointer rounded-[20px] py-[28px]">
-                            </div>
+                            <input type="submit" value="Pick Best Time To Call" id="submitBtn" class="block bg-[#3482FF] text-white text-center cursor-pointer rounded-[20px] py-[28px]">
                         </div>
                     </div>
                 </form>
+
+                <form id="consultationForm2" class="hidden w-full h-fit absolute inset-1/2 transform -translate-x-1/2 -translate-y-1/2 top-[250px] z-30">
+                    <div class="absolute inset-1/2 transform -translate-x-1/2 lg:w-[500px] sm:w-[70%] w-[90%] -translate-y-1/2  h-fit border shadow-xl flex flex-col px-12 py-12 rounded-3xl border-solid border-zinc-100 max-md:px-5 bg-white">
+                        <div class="text-center w-full">
+                            <h1 class="text-center text-[#0B0B0B] text-[30px] font-[500] pt-4">What’s Your Availability</h1>
+                            <p class="text-[#727272] text-center text-[19.2px] font-[300] leading-[32.6px] pb-4">What’s the best date
+                                and time to give you a call?</p>
+                        </div>
+                        <div class="flex flex-col w-full gap-4">
+                            <select id="dateSelect" class="w-full pl-[22.5px] py-[22.5px] text-[#0B0B0B] border border-[#D5D5D5] rounded-lg bg-[#FBFDFF] focus:ring-black focus:border-black text-[16px]">
+                                <option selected>Select a day</option>
+                                <option value="Monday, January 22, 2024">Monday, January 22, 2024</option>
+                                <option value="Monday, January 23, 2024">Tuesday, January 23, 2024</option>
+                                <option value="Monday, January 24, 2024">Wednesday, January 24, 2024</option>
+                                <option value="Monday, January 25, 2024">Thursday, January 25, 2024</option>
+                                <option value="Monday, January 26, 2024">Friday, January 26, 2024</option>
+                                <option value="Monday, January 27, 2024">Saturday, January 27, 2024</option>
+                                <option value="Monday, January 28, 2024">Sunday, January 28, 2024</option>
+                            </select>
+                            <select id="timeSelect"
+                                class="w-full pl-[22.5px] py-[22.5px] text-[#0B0B0B] border border-[#D5D5D5] rounded-lg bg-[#FBFDFF] focus:ring-black focus:border-black text-[16px]">
+                                <option selected>Select a time</option>
+                                <option value="6:00 AM">6:00 AM</option>
+                                <option value="6:30 AM">6:30 AM</option>
+                                <option value="7:00 AM">7:00 AM</option>
+                                <option value="7:30 AM">7:30 AM</option>
+                                <option value="8:00 AM">8:00 AM</option>
+                                <option value="8:30 AM">8:30 AM</option>
+                                <option value="9:00 AM">9:00 AM</option>
+                                <option value="9:30 AM">9:30 AM</option>
+                            </select>
+                            <input type="submit" value="Schedule Appointment" id="submitBtn2" class="bg-[#3482FF] text-white text-center cursor-pointer rounded-[20px] py-[28px]">
+                        </div>
+                    </div>
+                </form>
+
+                <form id="consultationForm3" class="hidden absolute inset-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full top-[350px] z-30">
+                    <div class="absolute inset-1/2 transform -translate-x-1/2 -translate-y-1/3 lg:w-2/4 sm:w-2/3 w-[90%] h-fit border shadow-xl flex flex-col px-12 py-12 rounded-3xl border-solid border-zinc-100 max-md:px-5 bg-white">
+                        <div class="text-center w-full">
+                            <h1 class="text-center text-[#0B0B0B] text-[30px] font-[500] pt-4">Additional Details</h1>
+                            <p class="text-[#727272] text-center text-[19.2px] font-[300] leading-[32.6px] pb-4">What’s the best date
+                                and time to give you a call?</p>
+                        </div>
+                        <div class="flex flex-col w-full gap-4">
+                            <select id="expectationSelect"
+                                class="w-full pl-[22.5px] py-[22.5px] text-[#0B0B0B] border border-[#D5D5D5] rounded-lg bg-[#FBFDFF] focus:ring-black focus:border-black text-[16px]">
+                                <option selected>What Are You Looking For?</option>
+                                <option value="Grow Followers">Grow Followers</option>
+                                <option value="Increase Leads">Increase Leads</option>
+                                <option value="Strengthen Engagement">Strengthen Engagement</option>
+                                <option value="Built Brand Awareness">Built Brand Awareness</option>
+                                <option value="Learn More About Social Media">Learn More About Social Media</option>
+                                <option value="Basic Presance">Basic Presance</option>
+                            </select>
+
+                            <p class="text-[#727272] text-center text-[19.2px] font-[300] leading-[32.6px] py-3">Which platforms are you
+                                currently using and which platforms would you like to target?</p>
+
+                            <div class="flex flex-col py-[16px]  items-center gap-[16px] self-stretch" id="platformSelect">
+                                <div class="flex justify-between self-stretch text-[#0B0B0B] text-[16px] font-[400]">
+                                    <h3 class="block sm:w-[144px] w-[100px]">Platform</h3>
+                                    <h3 class="block sm:w-[44px] w-[22px]">Have</h3>
+                                    <h3 class="block sm:w-[44px] w-[22px]">Want</h3>
+                                    <h3 class="block text-center sm:w-[200px] w-[100px]">Handel/Link</h3>
+                                </div>
+                                <div class="flex justify-between items-center self-stretch">
+                                    <div class="flex gap-3 sm:w-[144px] w-[100px]">
+                                        <img src="images/icons/form_icons/fb.png" class="h-[24px] w-[24px]">
+                                        <span class="text-[#4E6CB4] sm:text-[16px] text-[13px] font-[500]">Facebook</span>
+                                    </div>
+                                    <input type="checkbox" name="platform['facebook']['have']" id="fbHave"
+                                        class="checkbox sm:w-[44px] sm:h-[44px] w-[22px] h-[22px] justify-center items-center rounded-[10px] border-[#D5D5D5] border bg-[#FBFDFF]"
+                                        data-platform="facebook" data-action="have">
+                                    <input type="checkbox" name="platform['facebook']['want']" id="fbWant"
+                                        class="checkbox sm:w-[44px] sm:h-[44px] w-[22px] h-[22px] justify-center items-center rounded-[10px] border-[#D5D5D5] border bg-[#FBFDFF]"
+                                        data-platform="facebook" data-action="want">
+                                    <input type="text" name="fb_handel_link" placeholder="@myFacebbokAccount"
+                                        class="bg-[#FBFDFF] sm:text-[16px] text-[11px] text-center border-[#D5D5D5] border sm:w-[200px] w-[90px] sm:py-[22.5px] py-[4px] px-[4px] rounded-[13px] outline-none placeholder:text-black">
+                                </div>
+                                <div class="flex justify-between items-center self-stretch">
+                                    <div class="flex gap-3 sm:w-[144px] w-[100px]">
+                                        <img src="images/icons/form_icons/insta.png" class="h-[24px] w-[24px]">
+                                        <span class="text-[#EE4983] sm:text-[16px] text-[13px] font-[500]">Instagram</span>
+                                    </div>
+                                    <input type="checkbox" name="platform['instagram']['have']" id="igHave"
+                                        class="checkbox sm:w-[44px] sm:h-[44px] w-[22px] h-[22px] justify-center items-center rounded-[10px] border-[#D5D5D5] border bg-[#FBFDFF]"
+                                        data-platform="instagram" data-action="have">
+                                    <input type="checkbox" name="platform['instagram']['want']" id="igWant"
+                                        class="checkbox sm:w-[44px] sm:h-[44px] w-[22px] h-[22px] justify-center items-center rounded-[10px] border-[#D5D5D5] border bg-[#FBFDFF]"
+                                        data-platform="instagram" data-action="want">
+                                    <input type="text" name="ig_handel_link" placeholder="Paste here"
+                                        class="bg-[#FBFDFF] sm:text-[16px] text-[11px] text-center border-[#D5D5D5] border sm:w-[200px] w-[90px] sm:py-[22.5px] py-[4px] px-[4px] rounded-[13px] outline-none placeholder:text-black">
+                                </div>
+                                <div class="flex justify-between items-center self-stretch">
+                                    <div class="flex gap-3 sm:w-[144px] w-[100px]">
+                                        <img src="images/icons/form_icons/linkedin.png" class="h-[24px] w-[24px]">
+                                        <span class="text-[#0478B5] sm:text-[16px] text-[13px] font-[500]">Linkedin</span>
+                                    </div>
+                                    <input type="checkbox" name="platform['linkedin']['have']" id="linkedinHave"
+                                        class="checkbox sm:w-[44px] sm:h-[44px] w-[22px] h-[22px] justify-center items-center rounded-[10px] border-[#D5D5D5] border bg-[#FBFDFF]"
+                                        data-platform="linkedin" data-action="have">
+                                    <input type="checkbox" name="platform['linkedin']['want']" id="linkedinWant"
+                                        class="checkbox sm:w-[44px] sm:h-[44px] w-[22px] h-[22px] justify-center items-center rounded-[10px] border-[#D5D5D5] border bg-[#FBFDFF]"
+                                        data-platform="linkedin" data-action="want">
+                                    <input type="text" name="ig_handel_link" placeholder="Paste here"
+                                        class="bg-[#FBFDFF] sm:text-[16px] text-[11px] text-center border-[#D5D5D5] border sm:w-[200px] w-[90px] sm:py-[22.5px] py-[4px] px-[4px] rounded-[13px] outline-none placeholder:text-black">
+                                </div>
+                                <div class="flex justify-between items-center self-stretch">
+                                    <div class="flex gap-3 sm:w-[144px] w-[100px]">
+                                        <img src="images/icons/form_icons/google.png" class="h-[24px] w-[24px]">
+                                        <span class="text-[#4989F5] lg:text-[16px] text-[13px] font-[500]">Google</span>
+                                    </div>
+                                    <input type="checkbox" name="platform['google']['have']" id="googleHave"
+                                        class="checkbox sm:w-[44px] sm:h-[44px] w-[22px] h-[22px] justify-center items-center rounded-[10px] border-[#D5D5D5] border bg-[#FBFDFF]"
+                                        data-platform="google" data-action="have">
+                                    <input type="checkbox" name="platform['google']['want']" id="googleWant"
+                                        class="checkbox sm:w-[44px] sm:h-[44px] w-[22px] h-[22px] justify-center items-center rounded-[10px] border-[#D5D5D5] border bg-[#FBFDFF]"
+                                        data-platform="google" data-action="want">
+                                    <input type="text" name="ig_handel_link" placeholder="Paste here"
+                                        class="bg-[#FBFDFF] sm:text-[16px] text-[11px] text-center border-[#D5D5D5] border sm:w-[200px] w-[90px] sm:py-[22.5px] py-[4px] px-[4px] rounded-[13px] outline-none placeholder:text-black">
+                                </div>
+                                <div class="flex justify-between items-center self-stretch">
+                                    <div class="flex gap-3 sm:w-[144px] w-[100px]">
+                                        <img src="images/icons/form_icons/X.png" class="h-[24px] w-[24px]">
+                                        <span class="text-[#000000] sm:text-[16px] text-[13px] font-[500]">X/Twitter</span>
+                                    </div>
+                                    <input type="checkbox" name="platform['twitter']['have']" id="twitterHave"
+                                        class="checkbox sm:w-[44px] sm:h-[44px] w-[22px] h-[22px] justify-center items-center rounded-[10px] border-[#D5D5D5] border bg-[#FBFDFF]"
+                                        data-platform="twitter/X" data-action="have">
+                                    <input type="checkbox" name="platform['twitter']['want']" id="twitterWant"
+                                        class="checkbox sm:w-[44px] sm:h-[44px] w-[22px] h-[22px] justify-center items-center rounded-[10px] border-[#D5D5D5] border bg-[#FBFDFF]"
+                                        data-platform="twitter/X" data-action="want">
+                                    <input type="text" name="ig_handel_link" placeholder="Paste here"
+                                        class="bg-[#FBFDFF] sm:text-[16px] text-[11px] text-center border-[#D5D5D5] border sm:w-[200px] w-[90px] sm:py-[22.5px] py-[4px] px-[4px] rounded-[13px] outline-none placeholder:text-black">
+                                </div>
+                                <div class="flex justify-between items-center self-stretch">
+                                    <div class="flex gap-3 sm:w-[144px] w-[100px]">
+                                        <img src="images/icons/form_icons/yt.png" class="h-[24px] w-[24px]">
+                                        <span class="text-[#E42C2D] sm:text-[16px] text-[13px] font-[500]">YouTube</span>
+                                    </div>
+                                    <input type="checkbox" name="platform['youtube']['have']" id="ytHave"
+                                        class="checkbox sm:w-[44px] sm:h-[44px] w-[22px] h-[22px] justify-center items-center rounded-[10px] border-[#D5D5D5] border bg-[#FBFDFF]"
+                                        data-platform="youtube" data-action="have">
+                                    <input type="checkbox" name="platform['youtube']['want']" id="ytWant"
+                                        class="checkbox sm:w-[44px] sm:h-[44px] w-[22px] h-[22px] justify-center items-center rounded-[10px] border-[#D5D5D5] border bg-[#FBFDFF]"
+                                        data-platform="youtube" data-action="want">
+                                    <input type="text" name="ig_handel_link" placeholder="Paste here"
+                                        class="bg-[#FBFDFF] sm:text-[16px] text-[11px] text-center border-[#D5D5D5] border sm:w-[200px] w-[90px] sm:py-[22.5px] py-[4px] px-[4px] rounded-[13px] outline-none placeholder:text-black">
+                                </div>
+                                <div class="flex justify-between items-center self-stretch">
+                                    <div class="flex gap-3 sm:w-[144px] w-[100px]">
+                                        <img src="images/icons/form_icons/pint.png" class="h-[24px] w-[24px]">
+                                        <span class="text-[#EF4A48] sm:text-[16px] text-[13px] font-[500]">Pinterest</span>
+                                    </div>
+                                    <input type="checkbox" name="platform['pinterest']['have']" id="pinHave"
+                                        class="checkbox sm:w-[44px] sm:h-[44px] w-[22px] h-[22px] justify-center items-center rounded-[10px] border-[#D5D5D5] border bg-[#FBFDFF]"
+                                        data-platform="pinterest" data-action="have">
+                                    <input type="checkbox" name="platform['pinterest']['want']" id="pinWant"
+                                        class="checkbox sm:w-[44px] sm:h-[44px] w-[22px] h-[22px] justify-center items-center rounded-[10px] border-[#D5D5D5] border bg-[#FBFDFF]"
+                                        data-platform="pinterest" data-action="want">
+                                    <input type="text" name="ig_handel_link" placeholder="Paste here"
+                                        class="bg-[#FBFDFF] sm:text-[16px] text-[11px] text-center border-[#D5D5D5] border sm:w-[200px] w-[90px] sm:py-[22.5px] py-[4px] px-[4px] rounded-[13px] outline-none placeholder:text-black">
+                                </div>
+                            </div>
+
+                            <textarea name="comments" id="comments"
+                                class="mt-10 h-[150px] border border-[#D5D5D5] bg-[#FBFDFF] rounded-[13px] py-[22.5px] px-[29px] placeholder:text-black outline-none"
+                                placeholder="What Are You Looking For?"></textarea>
+
+                            <input type="submit" value="Send Additional Details" id="submitBtn3"
+                                class="bg-[#3482FF] text-white text-center cursor-pointer rounded-[20px] py-[28px]">
+                        </div>
+                    </div>
+                </form>
+
             </div>
         </div>
     </section>
@@ -1138,7 +1181,8 @@
     <!-- Script's -->
      <script src="js/script.js"></script>
      <!-- Form Script -->
-     <script src="js/showForm.js"></script>
+     <script src="js/showFormNew.js"></script>
+     <!-- <script src="js/showForm.js"></script> -->
      <!-- Counter Script -->
     <script src="js/counter.js"></script>
 
