@@ -670,6 +670,18 @@ video {
   margin-top: 150px;
 }
 
+.mb-\[50px\] {
+  margin-bottom: 50px;
+}
+
+.mt-\[180px\] {
+  margin-top: 180px;
+}
+
+.mb-\[100px\] {
+  margin-bottom: 100px;
+}
+
 .block {
   display: block;
 }
@@ -1598,6 +1610,10 @@ video {
 
 .pb-\[150px\] {
   padding-bottom: 150px;
+}
+
+.pb-\[50px\] {
+  padding-bottom: 50px;
 }
 
 .pl-4 {
