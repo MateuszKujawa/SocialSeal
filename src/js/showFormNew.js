@@ -31,23 +31,36 @@ const prepareDOMElements2 = () => {
 }
 
 const prepareDOMEvents2 = () => {
-    submitBtn.addEventListener('click', openForm2);
+    submitBtn.addEventListener('click', submitForm1);
     submitBtn2.addEventListener('click', openForm3);
     submitBtn3.addEventListener('click', closeForm3)
 }
 
+const submitForm1 = (event) => {
+    event.preventDefault();
 
-const submitForm2 = () => {
+    const formData = new FormData(consultationForm);
+    const requestData = Object.fromEntries(formData.entries());
 
-    openForm3();
-}
+    fetch('https://dev.faster.ws/demo/socialseal/consultation', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(requestData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        openForm2();
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+};
 
-const submitForm3 = () => {
 
 
-
-    closeForm3();
-}
 
 
 const closeFormOnOutside = (event) => {
@@ -69,7 +82,7 @@ const openForm2 = () => {
 };
 
 const closeForm2 = () => {
-    consultationForm2.add('hidden');
+    consultationForm2.classList.add('hidden');
     overlay.classList.add('hidden');
     document.removeEventListener('click', closeFormOnOutside);
 };
