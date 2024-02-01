@@ -31,38 +31,12 @@ const prepareDOMElements2 = () => {
 }
 
 const prepareDOMEvents2 = () => {
-    submitBtn.addEventListener('click', submitForm1);
-    submitBtn2.addEventListener('click', openForm3);
-    submitBtn3.addEventListener('click', closeForm3)
+    consultationForm.addEventListener('submit', submitForm1);
+    consultationForm2.addEventListener('submit', submitForm2);
+    consultationForm3.addEventListener('submit', submitForm3);
 }
 
-const submitForm1 = (event) => {
-    event.preventDefault();
-
-    const formData = new FormData(consultationForm);
-    const requestData = Object.fromEntries(formData.entries());
-
-    fetch('https://dev.faster.ws/demo/socialseal/consultation', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(requestData)
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log(data);
-        openForm2();
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-};
-
-
-
-
-
+// Show/Hide form's
 const closeFormOnOutside = (event) => {
     if (
         !consultationForm2.contains(event.target) &&
@@ -99,6 +73,87 @@ const closeForm3 = () => {
     overlay.classList.add('hidden');
     document.removeEventListener('click', closeFormOnOutside);
 };
+
+
+// Submiting form's
+
+const submitForm1 = (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(consultationForm);
+    const requestData = Object.fromEntries(formData.entries());
+
+    fetch('https://dev.faster.ws/demo/socialseal/consultation', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(requestData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        openForm2();
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+};
+
+const submitForm2 = (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(consultationForm2);
+    const requestData = Object.fromEntries(formData.entries());
+
+    fetch('https://dev.faster.ws/demo/socialseal/consultation2/' + uuid(), {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(requestData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        openForm3();
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+};
+
+const submitForm3 = (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(consultationForm3);
+    const requestData = Object.fromEntries(formData.entries());
+
+    fetch('https://dev.faster.ws/demo/socialseal/consultation3/' + uuid(), {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(requestData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        closeForm3();
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+};
+
+const uuid = () => {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = Math.random() * 16 | 0,
+            v = c === 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+    });
+};
+
 
 document.addEventListener('DOMContentLoaded', mainContent);
 
