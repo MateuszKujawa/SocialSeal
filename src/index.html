@@ -23,345 +23,327 @@
     
 </head>
 <body class="font-poppins">
-    <header>
-        <!-- Nav -->
-        <div class="relative bg-transparent z-30">
-            <nav x-data="{ open: false }" class="max-h-[100px] mx-auto lg:px-10 px-4 shadow-xl lg:shadow-none">
-                <div class="flex flex-wrap items-center justify-between mx-auto py-4">
-                    <!-- Logo -->
-                    <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
-                        <img src="images/logo/socialSealLogo.png" alt="logo Social Seal" class="w-[126px] bg-transparent">
-                    </a>
-                    <!-- Buttons -->
-                    <div class="flex md:order-2">
-                        <!-- Orange button -->
-                        <button type="button" class="text-white lg:text-[16px] md:text-[14px] bg-[#F89E52] rounded-[20px] h-[54px] px-6 md:mr-4 text-center hidden md:block">Speak With Us!</button>
 
-                        <!-- Hamburger button -->
-                        <div class="relative mx-auto lg:hidden scale-125 mb-2">
-                                <button class="text-[#F89E52] duration-100 w-14 h-14 relative focus:outline-none" @click="open = !open" id="mobile-icon">
-                                    <div class="block w-5 absolute left-1/2 top-1/2 transform -translate-y-1/2">
-                                        <span aria-hidden="true" class="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out" :class="{'rotate-45': open,' -translate-y-1.5': !open }"></span>
-                                        <span aria-hidden="true" class="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out" :class="{'opacity-0': open } "></span>
-                                        <span aria-hidden="true" class="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out" :class="{'-rotate-45': open, ' translate-y-1.5': !open}"></span>
+    <section class="relative lg:h-screen h-full w-full flex flex-col mx-auto z-20 mb-[150px] lg:px-4">
+        <header>
+            <!-- Nav -->
+            <div class="relative bg-transparent z-30 max-w-[1230px] mx-auto">
+                <nav x-data="{ open: false }" class="max-h-[100px] mx-auto px-4 shadow-xl lg:shadow-none">
+                    <div class="flex flex-wrap items-center justify-between mx-auto py-4">
+                        <!-- Logo -->
+                        <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+                            <img src="images/logo/socialSealLogo.png" alt="logo Social Seal" class="w-[126px] bg-transparent">
+                        </a>
+                        <!-- Buttons -->
+                        <div class="flex md:order-2">
+                            <!-- Orange button -->
+                            <button type="button" class="text-white lg:text-[16px] md:text-[14px] bg-[#F89E52] rounded-[20px] h-[54px] px-6 md:mr-4 text-center hidden md:block">Speak With Us!</button>
+    
+                            <!-- Hamburger button -->
+                            <div class="relative mx-auto lg:hidden scale-125 mb-2">
+                                    <button class="text-[#F89E52] duration-100 w-14 h-14 relative focus:outline-none" @click="open = !open" id="mobile-icon">
+                                        <div class="block w-5 absolute left-1/2 top-1/2 transform -translate-y-1/2">
+                                            <span aria-hidden="true" class="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out" :class="{'rotate-45': open,' -translate-y-1.5': !open }"></span>
+                                            <span aria-hidden="true" class="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out" :class="{'opacity-0': open } "></span>
+                                            <span aria-hidden="true" class="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out" :class="{'-rotate-45': open, ' translate-y-1.5': !open}"></span>
+                                        </div>
+                                    </button>
+                            </div>
+                        </div>
+                        <!-- Navbar -->
+                        <div class="items-center justify-between w-full md:w-auto md:order-1 hidden md:hidden lg:block" id="navbar-sticky">
+                            <ul class="flex flex-col p-2 md:p-0 mt-4 lg:text-[16px] md:space-x-2 lg:space-x-4 rtl:space-x-reverse md:flex-row md:mt-0">
+                                <li>
+                                    <a href="#" class="block py-2 px-2 md:px-0.5 text-black hover:text-[#F89E52] duration-300">Management</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block py-2 px-2 md:px-0.5 text-black hover:text-[#F89E52] duration-300">Marketing</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block py-2 px-2 md:px-0.5 text-black hover:text-[#F89E52] duration-300">Increase Sales</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block py-2 px-2 md:px-0.5 text-black hover:text-[#F89E52] duration-300" id="servicesBtn">Services <i class="fa-solid fa-chevron-down ml-1 duration-300" id="arrowIconServices"></i></a>
+                                </li>
+                                <li> 
+                                    <a href="#" class="block py-2 px-2 md:px-0.5 text-black hover:text-[#F89E52] duration-300" id="plansBtn">Plans & Pricing <i class="fa-solid fa-chevron-down ml-1 duration-300" id="arrowIconPlans"></i></a>
+                                </li>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Mobile nav menu -->
+                    <div class="lg:hidden flex flex-col justify-center w-full">
+                        <div id="mobile-menu" class="mobile-menu absolute top-23 w-full">
+                            <ul class="flex flex-col text-[16px] rtl:space-x-reverse pt-4 bg-white h-screen">
+                                <li>
+                                    <a href="#" class="block py-4 px-5 text-black hover:text-[#F89E52] font-[500] duration-300 border-t border-[#c5c5c5]">Management</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block py-4 px-5 text-black hover:text-[#F89E52] font-[500] duration-300 border-t border-[#c5c5c5]">Marketing</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block py-4 px-5 text-black hover:text-[#F89E52] font-[500] duration-300 border-t border-[#c5c5c5]">Increase Sales</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block py-4 px-5 text-black hover:text-[#F89E52] font-[500] duration-300 border-t border-[#c5c5c5]" id="servicesBtn">Services</a>
+                                </li>
+                                <li> 
+                                    <a href="#" class="block py-4 px-5 text-black hover:text-[#F89E52] font-[500] duration-300 border-t border-[#c5c5c5] border-b" id="plansBtn">Plans & Pricing</a>
+                                </li>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+            <!-- Dropdown menu -->
+            <!-- Services -->
+            <div class="fixed left-1/2 transform -translate-x-1/2 bg-white z-30 w-full h-[525px] border-t-[1px] border-b-[1px] border-[#E5E7EC] drop-shadow-lg hidden" id="dropdownServices">
+                <div class="flex flex-col justify-center items-center">
+                    <div class="max-w-[1440px] h-full mt-16 grid grid-cols-4 lg:gap-14 md:gap-4 lg:px-4 md:px-4">
+                            <!-- Dropdown box items -->
+                            <!-- Item 1 -->
+                            <div class="flex-col max-w-[279px]">
+                                <h1 class="lg:text-[28px] md:text-[20px]  font-[300] pb-4">Fundamentals</h1>
+                                <hr class="w-full">
+                                <div class="grid grid-cols-1 gap-5 pt-10">
+                                    <div class="flex space-x-2">
+                                        <img src="images/icons/header icons/dropdown-icons/route.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Strategy Planning</a>
                                     </div>
-                                </button>
-                        </div>
+                                    <div class="flex space-x-2">
+                                        <img src="images/icons/header icons/dropdown-icons/wand.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Profile Setup</a>
+                                    </div>
+                                    <div class="flex space-x-2">
+                                        <img src="images/icons/header icons/dropdown-icons/colors.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Theming & Branding</a>
+                                    </div>
+                                    <div class="flex space-x-2">
+                                        <img src="images/icons/header icons/dropdown-icons/order.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Training</a>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <!-- Item 2 -->
+                            <div class="flex-col max-w-[279px]">
+                                <h1 class="lg:text-[28px] md:text-[20px]  font-[300] pb-4">Content</h1>
+                                <hr class="w-full">
+                                <div class="grid grid-cols-1 gap-5 pt-10">
+                                    <div class="flex space-x-2">
+                                        <img src="images/icons/header icons/dropdown-icons/search.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Research & Planning</a>
+                                    </div>
+                                    <div class="flex space-x-2">
+                                        <img src="images/icons/header icons/dropdown-icons/icon.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Post Creation</a>
+                                    </div>
+                                    <div class="flex space-x-2">
+                                        <img src="images/icons/header icons/dropdown-icons/camera.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Video Creation</a>
+                                    </div>
+                                    <div class="flex space-x-2">
+                                        <img src="images/icons/header icons/dropdown-icons/line-chart.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Keyword Optimalization</a>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <!-- Item 3 -->
+                            <div class="flex-col max-w-[279px]">
+                                <h1 class="lg:text-[28px] md:text-[20px]  font-[300] pb-4">Public Relations</h1>
+                                <hr class="w-full">
+                                <div class="grid grid-cols-1 gap-5 pt-10">
+                                    <div class="flex space-x-2">
+                                        <img src="images/icons/header icons/dropdown-icons/inbox.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Inbox Management</a>
+                                    </div>
+                                    <div class="flex space-x-2">
+                                        <img src="images/icons/header icons/dropdown-icons/message-notification.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Social Listening</a>
+                                    </div>
+                                    <div class="flex space-x-2">
+                                        <img src="images/icons/header icons/dropdown-icons/activity-heart.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Brand Reputation</a>
+                                    </div>
+                                    <div class="flex space-x-2">
+                                        <img src="images/icons/header icons/dropdown-icons/announcement.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Crisis Management</a>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <!-- Item 4 -->
+                            <div class="flex-col max-w-[279px]">
+                                <h1 class="lg:text-[28px] md:text-[20px]  font-[300] pb-4">Market Growth</h1>
+                                <hr class="w-full">
+                                <div class="grid grid-cols-1 gap-5 pt-10">
+                                    <div class="flex space-x-2">
+                                        <img src="images/icons/header icons/dropdown-icons/dataflow.png" class="h-min"><a href="#" class="lg:text-[18px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Paid Advertising Setup</a>
+                                    </div>
+                                    <div class="flex space-x-2">
+                                        <img src="images/icons/header icons/dropdown-icons/shield-dollar.png" class="h-min"><a href="#" class="lg:text-[18px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Campaign Management</a>
+                                    </div>
+                                    <div class="flex space-x-2">
+                                        <img src="images/icons/header icons/dropdown-icons/chart-breakout-circle.png" class="h-min"><a href="#" class="lg:text-[18px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Strategy Optimization</a>
+                                    </div>
+                                    <div class="flex space-x-2">
+                                        <img src="images/icons/header icons/dropdown-icons/presentation.png" class="h-min"><a href="#" class="lg:text-[18px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Analytics & Reporting</a>
+                                    </div>
+                                </div>
+                            </div>
                     </div>
-                    <!-- Navbar -->
-                    <div class="items-center justify-between w-full md:w-auto md:order-1 hidden md:hidden lg:block" id="navbar-sticky">
-                        <ul class="flex flex-col p-2 md:p-0 mt-4 lg:text-[16px] md:space-x-2 lg:space-x-4 rtl:space-x-reverse md:flex-row md:mt-0">
-                            <li>
-                                <a href="#" class="block py-2 px-2 md:px-0.5 text-black hover:text-[#F89E52] duration-300">Management</a>
-                            </li>
-                            <li>
-                                <a href="#" class="block py-2 px-2 md:px-0.5 text-black hover:text-[#F89E52] duration-300">Marketing</a>
-                            </li>
-                            <li>
-                                <a href="#" class="block py-2 px-2 md:px-0.5 text-black hover:text-[#F89E52] duration-300">Increase Sales</a>
-                            </li>
-                            <li>
-                                <a href="#" class="block py-2 px-2 md:px-0.5 text-black hover:text-[#F89E52] duration-300" id="servicesBtn">Services <i class="fa-solid fa-chevron-down ml-1 duration-300" id="arrowIconServices"></i></a>
-                            </li>
-                            <li> 
-                                <a href="#" class="block py-2 px-2 md:px-0.5 text-black hover:text-[#F89E52] duration-300" id="plansBtn">Plans & Pricing <i class="fa-solid fa-chevron-down ml-1 duration-300" id="arrowIconPlans"></i></a>
-                            </li>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Mobile nav menu -->
-                <div class="lg:hidden flex flex-col justify-center w-full">
-                    <div id="mobile-menu" class="mobile-menu absolute top-23 w-full">
-                        <ul class="flex flex-col text-[16px] rtl:space-x-reverse pt-4 bg-white h-screen">
-                            <li>
-                                <a href="#" class="block py-2 px-5 text-black hover:text-[#F89E52] font-[500] duration-300 border-t border-[#c5c5c5]">Management</a>
-                            </li>
-                            <li>
-                                <a href="#" class="block py-2 px-5 text-black hover:text-[#F89E52] font-[500] duration-300 border-t border-[#c5c5c5]">Marketing</a>
-                            </li>
-                            <li>
-                                <a href="#" class="block py-2 px-5 text-black hover:text-[#F89E52] font-[500] duration-300 border-t border-[#c5c5c5]">Increase Sales</a>
-                            </li>
-                            <li>
-                                <a href="#" class="block py-2 px-5 text-black hover:text-[#F89E52] font-[500] duration-300 border-t border-[#c5c5c5]" id="servicesBtn">Services</a>
-                            </li>
-                            <li> 
-                                <a href="#" class="block py-2 px-5 text-black hover:text-[#F89E52] font-[500] duration-300 border-t border-[#c5c5c5] border-b" id="plansBtn">Plans & Pricing</a>
-                            </li>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
-
-        <!-- Dropdown menu -->
-    <div class="fixed left-1/2 transform -translate-x-1/2 bg-white z-30 w-full h-[525px] border-t-[1px] border-b-[1px] border-[#E5E7EC] drop-shadow-lg hidden" id="dropdownPlans">
-        <div class="flex flex-col items-center justify-center">
-            <div class="max-w-[1440px] h-full mt-16 grid grid-cols-4 lg:gap-14 md:gap-4 lg:px-4 md:px-4">
-            <!-- Dropdown box items -->
-            <!-- Item 1 -->
-            <div class="flex-col max-w-[279px]">
-                <h1 class="lg:text-[28px] md:text-[20px]  font-[300] pb-4">Management</h1>
-                <hr class="w-full">
-                <p class="text-[#727272] font-[400] lg:text-[17px] md:text-[14px] leading-8 pt-4 pb-6">
-                    Great for those starting up in Social Media and looking for a regular management service to keep up.
-                </p>
-                <div class="grid grid-cols-1 gap-5">
-                    <div class="flex space-x-2">
-                        <img src="images/icons/header icons/dropdown-icons/route.png"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Rates</a>
-                    </div>
-                    <div class="flex space-x-2">
-                        <img src="images/icons/header icons/dropdown-icons/wand.png"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Features</a>
-                    </div>
-                    <div class="flex space-x-2">
-                        <img src="images/icons/header icons/dropdown-icons/colors.png"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Sign Up</a>
-                    </div>
-                
-                </div>
-            </div>
-
-            <!-- Item 2 -->
-            <div class="flex-col max-w-[279px]">
-                <h1 class="lg:text-[28px] md:text-[20px]  font-[300] pb-4">Growth Plans</h1>
-                <hr class="w-full">
-                <p class="text-[#727272] font-[400] lg:text-[17px] md:text-[14px] leading-8 pt-4 pb-6">
-                    Geared for those looking to grow their Social Media presence and capitalize on marketing benefits.
-                </p>
-                <div class="grid grid-cols-1 gap-5">
-                    <div class="flex space-x-2">
-                        <img src="images/icons/header icons/dropdown-icons/search.png"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Rates</a>
-                    </div>
-                    <div class="flex space-x-2">
-                        <img src="images/icons/header icons/dropdown-icons/stars.png"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Features</a>
-                    </div>
-                    <div class="flex space-x-2">
-                        <img src="images/icons/header icons/dropdown-icons/user-right.png"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Sign Up</a>
-                    </div>
+                    <!-- Button -->
+                    <button class="text-[#3482ff] hover:text-[#3452ff] duration-300 absolute bottom-10">
+                        <a href="#" class="text-[16px] rounded-[20px] px-[55px] py-[28px] border border-[#3482ff]">View All Services</a>
+                    </button>
                 </div>
             </div>
 
-            <!-- Item 3 -->
-            <div class="flex-col max-w-[279px]">
-                <h1 class="lg:text-[28px] md:text-[20px]  font-[300] pb-4">Custom Plans</h1>
-                <hr class="w-full">
-                <div class="grid grid-cols-1 gap-5 pt-6">
-                    <div class="grid grid-cols-1 gap-y-6">
-                        <div class="flex space-x-2">
-                            <img src="images/icons/header icons/dropdown-icons/inbox.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Inbox Management</a>
-                        </div>
-                        <div class="flex space-x-2">
-                            <img src="images/icons/header icons/dropdown-icons/message-notification.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Social Listening</a>
-                        </div>
-                        <div class="flex space-x-2">
-                            <img src="images/icons/header icons/dropdown-icons/activity-heart.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Brand Reputation</a>
-                        </div>
-                        <div class="flex space-x-2">
-                            <img src="images/icons/header icons/dropdown-icons/announcement.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Crisis Management</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Item 4 -->
-            <div class="flex-col max-w-[279px]">
-                <h1 class="lg:text-[28px] md:text-[20px]  font-[300] pb-4">Growth</h1>
-                <hr class="w-full">
-                
-                <div class="grid grid-cols-1 gap-5 pt-6">
-                    <div class="grid grid-cols-1 gap-y-6">
-                        <div class="flex space-x-2">
-                            <img src="images/icons/header icons/dropdown-icons/inbox.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52] ">Paid Advertising Setup</a>
-                        </div>
-                        <div class="flex space-x-2">
-                            <img src="images/icons/header icons/dropdown-icons/message-notification.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52] ">Campaign Management</a>
-                        </div>
-                        <div class="flex space-x-2">
-                            <img src="images/icons/header icons/dropdown-icons/activity-heart.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52] ">Strategy Optimalization</a>
-                        </div>
-                        <div class="flex space-x-2">
-                            <img src="images/icons/header icons/dropdown-icons/announcement.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52] ">Analytics & Reporting</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </div>
-
-            <!-- Button -->
-            <button class="mb-16 mt-16 text-[#3482ff] hover:text-[#3452ff] duration-300">
-                <a href="#" class="text-[16px] rounded-[20px] px-[55px] py-[28px] border border-[#3482ff]">View All Services</a>
-            </button>
-        </div>
-    </div>
-    <div class="fixed left-1/2 transform -translate-x-1/2 bg-white z-30 w-full h-[525px] border-t-[1px] border-b-[1px] border-[#E5E7EC] drop-shadow-lg hidden" id="dropdownServices">
-        <div class="flex flex-col justify-center items-center">
-            <div class="max-w-[1440px] h-full mt-16 grid grid-cols-4 lg:gap-14 md:gap-4 lg:px-4 md:px-4">
+            <!-- Plans & Pricing -->
+            <div class="fixed left-1/2 transform -translate-x-1/2 bg-white z-30 w-full h-[525px] border-t-[1px] border-b-[1px] border-[#E5E7EC] drop-shadow-lg hidden" id="dropdownPlans">
+                <div class="flex flex-col items-center justify-center">
+                    <div class="max-w-[1440px] h-full mt-16 grid grid-cols-4 lg:gap-14 md:gap-4 lg:px-4 md:px-4">
                     <!-- Dropdown box items -->
                     <!-- Item 1 -->
                     <div class="flex-col max-w-[279px]">
-                        <h1 class="lg:text-[28px] md:text-[20px]  font-[300] pb-4">Fundamentals</h1>
+                        <h1 class="lg:text-[28px] md:text-[20px]  font-[300] pb-4">Management</h1>
                         <hr class="w-full">
-                        <div class="grid grid-cols-1 gap-5 pt-10">
+                        <p class="text-[#727272] font-[400] lg:text-[17px] md:text-[14px] leading-8 pt-4 pb-6">
+                            Great for those starting up in Social Media and looking for a regular management service to keep up.
+                        </p>
+                        <div class="grid grid-cols-1 gap-5">
                             <div class="flex space-x-2">
-                                <img src="images/icons/header icons/dropdown-icons/route.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Strategy Planning</a>
+                                <img src="images/icons/header icons/dropdown-icons/route.png"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Rates</a>
                             </div>
                             <div class="flex space-x-2">
-                                <img src="images/icons/header icons/dropdown-icons/wand.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Profile Setup</a>
+                                <img src="images/icons/header icons/dropdown-icons/wand.png"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Features</a>
                             </div>
                             <div class="flex space-x-2">
-                                <img src="images/icons/header icons/dropdown-icons/colors.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Theming & Branding</a>
+                                <img src="images/icons/header icons/dropdown-icons/colors.png"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Sign Up</a>
                             </div>
-                            <div class="flex space-x-2">
-                                <img src="images/icons/header icons/dropdown-icons/order.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Training</a>
-                            </div>
+                        
                         </div>
                     </div>
-
+    
                     <!-- Item 2 -->
                     <div class="flex-col max-w-[279px]">
-                        <h1 class="lg:text-[28px] md:text-[20px]  font-[300] pb-4">Content</h1>
+                        <h1 class="lg:text-[28px] md:text-[20px]  font-[300] pb-4">Growth Plans</h1>
                         <hr class="w-full">
-                        <div class="grid grid-cols-1 gap-5 pt-10">
+                        <p class="text-[#727272] font-[400] lg:text-[17px] md:text-[14px] leading-8 pt-4 pb-6">
+                            Geared for those looking to grow their Social Media presence and capitalize on marketing benefits.
+                        </p>
+                        <div class="grid grid-cols-1 gap-5">
                             <div class="flex space-x-2">
-                                <img src="images/icons/header icons/dropdown-icons/search.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Research & Planning</a>
+                                <img src="images/icons/header icons/dropdown-icons/search.png"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Rates</a>
                             </div>
                             <div class="flex space-x-2">
-                                <img src="images/icons/header icons/dropdown-icons/icon.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Post Creation</a>
+                                <img src="images/icons/header icons/dropdown-icons/stars.png"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Features</a>
                             </div>
                             <div class="flex space-x-2">
-                                <img src="images/icons/header icons/dropdown-icons/camera.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Video Creation</a>
-                            </div>
-                            <div class="flex space-x-2">
-                                <img src="images/icons/header icons/dropdown-icons/line-chart.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Keyword Optimalization</a>
+                                <img src="images/icons/header icons/dropdown-icons/user-right.png"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Sign Up</a>
                             </div>
                         </div>
                     </div>
-
+    
                     <!-- Item 3 -->
                     <div class="flex-col max-w-[279px]">
-                        <h1 class="lg:text-[28px] md:text-[20px]  font-[300] pb-4">Public Relations</h1>
+                        <h1 class="lg:text-[28px] md:text-[20px]  font-[300] pb-4">Custom Plans</h1>
                         <hr class="w-full">
-                        <div class="grid grid-cols-1 gap-5 pt-10">
-                            <div class="flex space-x-2">
-                                <img src="images/icons/header icons/dropdown-icons/inbox.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Inbox Management</a>
-                            </div>
-                            <div class="flex space-x-2">
-                                <img src="images/icons/header icons/dropdown-icons/message-notification.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Social Listening</a>
-                            </div>
-                            <div class="flex space-x-2">
-                                <img src="images/icons/header icons/dropdown-icons/activity-heart.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Brand Reputation</a>
-                            </div>
-                            <div class="flex space-x-2">
-                                <img src="images/icons/header icons/dropdown-icons/announcement.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Crisis Management</a>
+                        <div class="grid grid-cols-1 gap-5 pt-6">
+                            <div class="grid grid-cols-1 gap-y-6">
+                                <div class="flex space-x-2">
+                                    <img src="images/icons/header icons/dropdown-icons/inbox.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Inbox Management</a>
+                                </div>
+                                <div class="flex space-x-2">
+                                    <img src="images/icons/header icons/dropdown-icons/message-notification.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Social Listening</a>
+                                </div>
+                                <div class="flex space-x-2">
+                                    <img src="images/icons/header icons/dropdown-icons/activity-heart.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Brand Reputation</a>
+                                </div>
+                                <div class="flex space-x-2">
+                                    <img src="images/icons/header icons/dropdown-icons/announcement.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Crisis Management</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-
+    
                     <!-- Item 4 -->
                     <div class="flex-col max-w-[279px]">
-                        <h1 class="lg:text-[28px] md:text-[20px]  font-[300] pb-4">Market Growth</h1>
+                        <h1 class="lg:text-[28px] md:text-[20px]  font-[300] pb-4">Growth</h1>
                         <hr class="w-full">
-                        <div class="grid grid-cols-1 gap-5 pt-10">
-                            <div class="flex space-x-2">
-                                <img src="images/icons/header icons/dropdown-icons/dataflow.png" class="h-min"><a href="#" class="lg:text-[18px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Paid Advertising Setup</a>
-                            </div>
-                            <div class="flex space-x-2">
-                                <img src="images/icons/header icons/dropdown-icons/shield-dollar.png" class="h-min"><a href="#" class="lg:text-[18px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Campaign Management</a>
-                            </div>
-                            <div class="flex space-x-2">
-                                <img src="images/icons/header icons/dropdown-icons/chart-breakout-circle.png" class="h-min"><a href="#" class="lg:text-[18px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Strategy Optimization</a>
-                            </div>
-                            <div class="flex space-x-2">
-                                <img src="images/icons/header icons/dropdown-icons/presentation.png" class="h-min"><a href="#" class="lg:text-[18px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52]">Analytics & Reporting</a>
+                        
+                        <div class="grid grid-cols-1 gap-5 pt-6">
+                            <div class="grid grid-cols-1 gap-y-6">
+                                <div class="flex space-x-2">
+                                    <img src="images/icons/header icons/dropdown-icons/inbox.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52] ">Paid Advertising Setup</a>
+                                </div>
+                                <div class="flex space-x-2">
+                                    <img src="images/icons/header icons/dropdown-icons/message-notification.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52] ">Campaign Management</a>
+                                </div>
+                                <div class="flex space-x-2">
+                                    <img src="images/icons/header icons/dropdown-icons/activity-heart.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52] ">Strategy Optimalization</a>
+                                </div>
+                                <div class="flex space-x-2">
+                                    <img src="images/icons/header icons/dropdown-icons/announcement.png" class="h-min"><a href="#" class="lg:text-[19px] md:text-[14px] text-[#727272] leading-4 hover:text-[#F89E52] ">Analytics & Reporting</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-            </div>
-            <!-- Button -->
-            <button class="mb-16 mt-32 text-[#3482ff] hover:text-[#3452ff] duration-300">
-                <a href="#" class="text-[16px] rounded-[20px] px-[55px] py-[28px] border border-[#3482ff]">View All Services</a>
-            </button>
-        </div>
-    </div>
-    <!-- Dropdown menu end -->
-
-        <!-- SVG-->
-        <div class="absolute top-0 left-0 z-10 hidden lg:block">
-            <svg width="855" height="698" viewBox="0 0 655 698" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M609.974 46.1754C664.092 146.301 662.755 258.442 640.708 371.25C619.328 484.059 577.237 597.535 489.714 654.273C402.19 711.678 268.567 713.013 183.049 655.608C97.53 598.202 60.7836 483.391 20.6967 355.23C-18.7221 227.737 -60.8133 87.5607 -8.70033 -11.8976C43.4127 -111.356 189.73 -169.429 318.008 -154.744C446.286 -140.726 555.857 -53.2829 609.974 46.1754Z" fill="#F3F7FA"/>
-                </svg>
-        </div>
-    </header>
-
-    <section class="relative h-auto lg:h-[80vh] mx-auto lg:mt-16 my-10 z-20 lg:px-10 md:px-6" id="baner">
-        <div class="w-full flex flex-col lg:flex-row justify-center items-center z-20">
-            <!-- LG Size -->
-            <div class="lg:flex space-x-20 hidden">
-                <div class="flex flex-col space-y-10">
-                    <p class="w-[370px] py-[12px] bg-[#F79D5A] text-white text-[18px] text-center rounded-[32px]">Social
-                        Media Marketing That Works!</p>
-                    <h1 class="font-[700] text-[55px] leading-[66px]">Save Time<br> Build Connections<br> Increase Profits
-                    </h1>
-                    <div class="flex space-x-4">
-                        <img src="images/icons/header icons/linkedin.png">
-                        <img src="images/icons/header icons/fb.png">
-                        <img src="images/icons/header icons/ig.png">
-                        <img src="images/icons/header icons/g.png">
-                        <img src="images/icons/header icons/tw.png">
-                        <img src="images/icons/header icons/yt.png">
-                        <img src="images/icons/header icons/pint.png">
                     </div>
-                    <div class="flex space-x-2">
-                        <a href="#"
-                            class="rounded-[20px] py-[28px] px-[55px] bg-[#3482FF] text-white text-[16px] font-[600] text-center">View
-                            Our Plans</a>
-                        <a href="#" class="font-normal text-[#3482FF] py-[28px] px-[28px] text-center">What We Offer</a>
+    
+                    <!-- Button -->
+                    <button class=" text-[#3482ff] hover:text-[#3452ff] duration-300 absolute bottom-10">
+                        <a href="#" class="text-[16px] rounded-[20px] px-[55px] py-[28px] border border-[#3482ff]">View All Services</a>
+                    </button>
+                </div>
+            </div>
+            <!-- Dropdown menu end -->
+    
+            <!-- SVG-->
+            <div class="absolute top-0 left-0 z-10 hidden lg:block">
+                <svg width="855" height="698" viewBox="0 0 655 698" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M609.974 46.1754C664.092 146.301 662.755 258.442 640.708 371.25C619.328 484.059 577.237 597.535 489.714 654.273C402.19 711.678 268.567 713.013 183.049 655.608C97.53 598.202 60.7836 483.391 20.6967 355.23C-18.7221 227.737 -60.8133 87.5607 -8.70033 -11.8976C43.4127 -111.356 189.73 -169.429 318.008 -154.744C446.286 -140.726 555.857 -53.2829 609.974 46.1754Z" fill="#F3F7FA"/></svg>
+            </div>
+        </header>
+        
+        <div class="w-full h-full flex flex-col lg:flex-row justify-center items-start lg:py-[50px] py-4 z-20 mx-auto" id="baner">
+            <div class="flex lg:flex-row flex-col px-4 py-4 lg:max-w-[1230px] w-full mx-auto gap-[50px]">
+                <!-- Text -->
+                <div class="flex flex-col space-y-[40px] lg:items-start items-center">
+                    <p class="w-[370px] py-[12px] bg-[#F79D5A] text-white text-[18px] text-center rounded-[32px]">Social Media Marketing That Works!</p>
+                    <div class="flex flex-col sm:space-y-[8px] space-y-[16px] lg:text-left text-center w-full">
+                        <h1 class="font-[700] lg:text-[60px] sm:text-[72px] text-[35.2px] sm:leading-[66px] leading-[38.72px]">Save Time</h1>
+                        <h1 class="font-[700] lg:text-[60px] sm:text-[72px] text-[35.2px] sm:leading-[66px] leading-[38.72px]">Build Connections</h1>
+                        <h1 class="font-[700] lg:text-[60px] sm:text-[72px] text-[35.2px] sm:leading-[66px] leading-[38.72px]">Increase Profits</h1>
+                    </div>
+
+                    <!-- Icons & Button's -->
+                    <div class="lg:flex flex-col lg:space-y-[80px] space-y-[40px] hidden">
+                        <div class="flex space-x-4">
+                            <img src="images/icons/header icons/linkedin.png">
+                            <img src="images/icons/header icons/fb.png">
+                            <img src="images/icons/header icons/ig.png">
+                            <img src="images/icons/header icons/g.png">
+                            <img src="images/icons/header icons/tw.png">
+                            <img src="images/icons/header icons/yt.png">
+                            <img src="images/icons/header icons/pint.png">
+                        </div>
+                        <div class="flex space-x-2 items-center justify-center">
+                            <a href="#" class="rounded-[20px] py-[28px] px-[55px] bg-[#3482FF] text-white text-[16px] font-[600] text-center">View Our Plans</a>
+                            <a href="#" class="font-normal text-[#3482FF] py-[28px] pl-[32px] text-center ">What We Offer</a>
+                        </div>
                     </div>
                 </div>
     
-                <div class="h-auto flex justify-center items-center space-x-4">
+                <!-- Images -->
+                <div class="lg:w-auto sm:w-full h-auto flex justify-center items-center space-x-4">
                     <div class="flex-col">
                         <div>
-                            <img src="images/img/header/worker.png" class="max-w-max h-auto">
+                            <img src="images/img/header/worker.png" class="lg:max-w-max h-auto">
                         </div>
                         <div>
-                            <img src="images/img/header/girl-in-car.png" class="max-w-max h-auto">
+                            <img src="images/img/header/girl-in-car.png" class="lg:max-w-max h-auto">
                         </div>
                     </div>
                     <div>
-                        <img src="images/img/header/greece.png" class="max-w-max h-auto">
+                        <img src="images/img/header/greece.png" class="lg:max-w-max h-auto">
                     </div>
                 </div>
-            </div>
-    
-            <!-- MD Size -->
-            <div class="flex flex-col justify-center items-center space-y-10 lg:hidden">
-                <div class="flex flex-col space-y-6 justify-center items-center text-center">
-                    <p class="w-[370px] py-[10px] bg-[#F79D5A] text-white text-[18px] rounded-[32px]">Social Media Marketing
-                        That Works!</p>
-    
-                    <h1 class="font-[700] text-[35px] md:text-[60px] md:leading-[60px] leading-[35px]">Save Time<br> Build
-                        Connections<br> Increase Profits</h1>
-                </div>
-    
-                <div class="flex justify-center items-center space-x-4 px-4">
-                    <div class="flex-col">
-                        <div>
-                            <img src="images/img/header/worker.png" class=" h-auto">
-                        </div>
-                        <div>
-                            <img src="images/img/header/girl-in-car.png" class=" h-auto">
-                        </div>
-                    </div>
-                    <div class="flex">
-                        <img src="images/img/header/girl-on-beach.png" class=" h-auto">
-                    </div>
-                </div>
-    
-    
-                <div class="space-y-6 flex flex-col pb-[150px]">
-                    <div class="flex space-x-4 mt-4">
+
+                <!-- Icons & Button's -->
+                <div class="flex flex-col lg:space-y-[80px] space-y-[40px] lg:hidden">
+                    <div class="flex space-x-4 justify-center">
                         <img src="images/icons/header icons/linkedin.png">
                         <img src="images/icons/header icons/fb.png">
                         <img src="images/icons/header icons/ig.png">
@@ -370,19 +352,14 @@
                         <img src="images/icons/header icons/yt.png">
                         <img src="images/icons/header icons/pint.png">
                     </div>
-    
-                    <div class="mx-auto relative left-to-rightAnimation w-full">
-                        <a href="#"
-                            class="block w-full rounded-[20px] py-[14px] md:py-[28px] px-[55px] bg-[#3482FF] text-white text-[16px] font-[600] text-center">View
-                            Our Plans</a>
+                    <div class="flex space-x-2 items-center justify-center w-full">
+                        <a href="#" class="rounded-[20px] py-[28px] px-[55px] bg-[#3482FF] text-white text-[16px] font-[600] text-center sm:w-fit w-full">View Our Plans</a>
                     </div>
-    
                 </div>
-    
-    
             </div>
         </div>
     </section>
+
     <!-- Slider -->
     <div class="relative">
         <!-- Slider animate off -->
@@ -434,11 +411,10 @@
             </div>
     </div>
 
-    <section class="w-full lg:h-screen h-auto bg-[#292F3E] flex items-center justify-center space-x-4" id="section_counter">
+    <section class="w-full lg:h-screen h-fit bg-[#292F3E] flex items-center justify-center space-x-4" id="section_counter">
             <div class="flex lg:flex-row flex-col max-w-[1230px] px-2 lg:pb-10 mt-32">
                 <!-- Left site -->
-                <div
-                    class="lg:order-1 order-2 h-fit lg:max-w-1/2 w-full flex flex-col items-center text-center lg:text-left lg:items-start py-20 lg:py-0 space-y-y">
+                <div class="lg:order-1 order-2 h-fit lg:max-w-1/2 w-full flex flex-col items-center text-center lg:text-left lg:items-start py-20 lg:py-0 space-y-8">
                     <p class="text-[#FFD437] font-[500] text-[20px]">
                         Social Media Management is
                     </p>
@@ -510,7 +486,7 @@
     </section>
         
     <section class="relative w-full h-screen bg-white mt-10 lg:mt-0">
-            <div class="relative max-w-[1230px] h-full mx-auto flex flex-col lg:flex-row items-center justify-center space-x-8 px-4 space-y-8">
+            <div class="relative max-w-[1230px] h-full mx-auto flex flex-col lg:flex-row items-center justify-center space-x-8 lg:pl-4 lg:px-0 px-4 space-y-8">
                 <div class="flex flex-col space-y-6 justify-center lg:items-start items-center lg:text-left text-center">
                     <p class="text-[#F89E52] font-[500] text-[20px]">
                         Our Expertise is Your Success
@@ -534,7 +510,7 @@
                     </a>
                 </div>
             
-                <div class="swiper mySwiper w-[60%] lg:w-auto flex justify-center items-center">
+                <div class="swiper mySwiper w-[65%] lg:w-auto sm:w-[70%] flex justify-center items-center">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide"><img src="images/img/swiperImg/1.png"></div>
                         <div class="swiper-slide"><img src="images/img/swiperImg/2.png"></div>
@@ -548,8 +524,7 @@
                     </div>
                 </div>
                 <div class="lg:hidden w-full flex items-center justify-center h-fit px-4">
-                    <a href="#"
-                        class="rounded-[20px] w-full sm:w-fit py-[23px] sm:py-[28px] px-[55px] bg-[#3482FF] text-white text-[16px] font-[600] text-center">View
+                    <a href="#" class="rounded-[20px] w-full sm:w-fit py-[23px] sm:py-[28px] px-[55px] bg-[#3482FF] text-white text-[16px] font-[600] text-center">View
                         more
                     </a>
                 </div>
@@ -1178,7 +1153,7 @@
         
     </section>
 
-    <section class="w-full lg:h-screen flex flex-col lg:px-[105px] px-4 py-[120px] justify-center items-center gap-y-20">
+    <section class="w-full max-w-[1230px] lg:h-screen flex flex-col lg:px-[105px] px-4 py-[120px] justify-center items-center gap-y-20 mx-auto">
         <div class="text-center flex flex-col sm:gap-[35px] gap-[5px]">
             <h1 class="text-[#2A2A2A] lg:text-[96px] sm:text-[70.9px] text-[52.7px] font-[700] lg:leading-[76.8px] sm:leading-[56.72px] leading-[42.18px]">Accelerate</h1>
             <h2 class="text-[#FF7012] font-[700] lg:text-[72px] sm:text-[49.2px] text-[32.7px] lg:leadin-[57.6px] sm:leading-[39.34px] leading-[26.12px] mt-6 sm:mt-0">Your Social Strategy</h2>
@@ -1203,58 +1178,73 @@
         </p>
     </section>
 
-    <footer class="relative h-[420px] w-full bg-[#1F1D28] flex justify-center items-center lg:py-[90px] px-4 py-10">
-        <div class="w-[1230px] flex lg:flex-row sm:flex-col">
+    <footer class="relative w-full lg:h-auto sm:h-screen bg-[#1F1D28] flex justify-center items-center">
+       <div class="flex sm:flex-row w-full lg:px-[105px] px-[30px] py-[90px] lg:justify-center sm:justify-start justify-center items-center flex-wrap">
+            <!-- Left box -->
             <div class="flex sm:flex-row flex-col">
-                <div class="flex flex-col items-start justify-start bg-red-500 p-4">
-                    <img src="images/icons/logo_white.png" alt="logo">
+                <!-- Item1 -->
+                <div class="flex flex-col sm:items-start items-center sm:w-[307.5px] sm:h-[246px] h-fit px-[15px] py-4 gap-[15px]">
+                    <img src="images/icons/logo_white.png" alt="logo white social seal">
                     <p class="text-[#C5C7CB] text-[16px] leading-[27.2px]">For Support</p>
-                    <h1 class="text-[20px] text-white font-[700] leading-[24px]">0123 - 567 - 7650</h1>
+                    <a href="#" class="text-white text-[20px] font-[700] leading-[24px]">0123 - 567 - 7650</a>
                 </div>
-
-                <div class="flex flex-col items-start justify-start bg-blue-500 p-4 gap-6">
-                    <h2 class="text-[20px] text-white font-[700] leading-[24px]">Primary Pages</h2>
-                    <ul class="flex flex-col gap-2 list-disc text-[#C5C7CB] text-[15px] leading-[25.5px] ml-4">
-                        <li><a href="#" class="hover:underline">Home</a></li>
-                        <li><a href="#" class="hover:underline">About</a></li>
-                        <li><a href="#" class="hover:underline">Contact</a></li>
-                        <li><a href="#" class="hover:underline">Service</a></li>
+                <!-- Item2 -->
+                <div class="flex flex-col sm:items-start items-center sm:w-[307.5px] sm:h-[246px] h-fit px-[15px] py-4">
+                    <h1 class="text-white text-[20px] font-[700] leading-[24px]">Primary Pages</h1>
+                    <ul class="flex flex-col sm:items-start items-center gap-[8px] self-stretch text-[#C5C7CB] text-[15px] leading-[25.5px] sm:list-disc sm:pl-[20px] sm:pt-[30px] pt-[20px]">
+                        <li>
+                            <a href="#" class="hover:underline">Home</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:underline">About</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:underline">Contact</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:underline">Service</a>
+                        </li>
                     </ul>
                 </div>
             </div>
 
+            <!-- Right box -->
             <div class="flex sm:flex-row flex-col">
-                <div class="flex flex-col items-start justify-start bg-green-500 p-4 gap-6">
-                    <h2 class="text-[20px] text-white font-[700] leading-[24px]">Primary Pages</h2>
-                    <ul class="flex flex-col gap-2 list-disc text-[#C5C7CB] text-[15px] leading-[25.5px] ml-4">
-                        <li><a href="#" class="hover:underline">About</a></li>
-                        <li><a href="#" class="hover:underline">Pricing</a></li>
-                        <li><a href="#" class="hover:underline">Contact</a></li>
-                        <li><a href="#" class="hover:underline">Request for Demo</a></li>
+                <!-- Item3 -->
+                <div class="flex flex-col sm:items-start items-center sm:w-[307.5px] sm:h-[246px] h-fit px-[15px] py-4">
+                    <h1 class="text-white text-[20px] font-[700] leading-[24px]">Quick Access</h1>
+                    <ul class="flex flex-col sm:items-start items-center gap-[8px] self-stretch text-[#C5C7CB] text-[15px] leading-[25.5px] sm:list-disc sm:pl-[20px] sm:pt-[30px] pt-[20px]">
+                        <li>
+                            <a href="#" class="hover:underline">About</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:underline">Pricing</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:underline">Contact</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:underline">Request for Demo</a>
+                        </li>
                     </ul>
                 </div>
-
-                <div class="flex flex-col items-start justify-start bg-purple-500 p-4 gap-[25px]">
-                    <h2 class="text-[20px] text-white font-[700] leading-[24px]">Company</h2>
-
-                    <div class="flex space-x-4 items-center">
-                        <i class="fa-solid fa-phone-volume text-[#C9CACD] text-[20px]"></i>
-                        <p class="text-[#C5C7CB] text-[15px] leading-[25.5px]">8 (495) 989—20—11</p>
-                    </div>
-                    <div class="flex space-x-4 items-center">
-                        <i class="fa-regular fa-envelope text-[#C9CACD] text-[20px]"></i>
-                        <p class="text-[#C5C7CB] text-[15px] leading-[25.5px]">contact@socialseal.com</p>
-                    </div>
-                    <div class="flex space-x-4">
-                        <i class="fa-solid fa-location-dot text-[#C9CACD] text-[20px]"></i>
-                        <p class="text-[#C5C7CB] text-[15px] leading-[25.5px]">Ranelagh Place, Liverpool, L3 5UL, England</p>
-                    </div>
-                    
-                    
+                <!-- Item4 -->
+                <div class="flex flex-col sm:items-start items-center sm:w-[307.5px] sm:h-[246px] h-fit px-[15px] py-4">
+                    <h1 class="text-white text-[20px] font-[700] leading-[24px]">Company</h1>
+                    <ul class="flex flex-col sm:items-start items-center sm:text-left text-center gap-[25px] self-stretch text-[#C5C7CB] text-[15px] leading-[25.5px] sm:pt-[30px] pt-[20px]">
+                        <li>
+                            <i class="fa-solid fa-phone-volume text-[20px] pr-[5px]"></i> <a href="#" class="hover:underline">8 (495) 989—20—11</a>
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-envelope text-[20px] pr-[5px]"></i> <a href="#" class="hover:underline">contact@socialseal.com</a>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-location-dot text-[20px] pr-[5px]"></i> <a href="#" class="hover:underline">Ranelagh Place, Liverpool, L3 5UL, England</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </div>
-       
+       </div>
 
         <div class="w-full h-[66px] bg-[#24222E] flex justify-center items-center absolute bottom-0">
             <p class="text-center text-white font-[400] text-[14px] leading-[23.8px]">&copy; 2023 SocialSeal. All Rights Reserved</p>
@@ -1264,7 +1254,7 @@
     <!-- Script's -->
      <script src="js/script.js"></script>
      <!-- Form Script -->
-     <script src="js/showFormNew.js"></script>
+     <script src="js/showForm.js"></script>
      <!-- <script src="js/showForm.js"></script> -->
      <!-- Counter Script -->
     <script src="js/counter.js"></script>

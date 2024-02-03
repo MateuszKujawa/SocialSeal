@@ -34,6 +34,8 @@ const prepareDOMElements = () => {
     // Dropdown card's
     services = document.querySelector('#dropdownServices')
     plans = document.querySelector('#dropdownPlans')
+    // Header
+    header = document.querySelector('header');
     // Webiste baner
     baner = document.querySelector('#baner')
     // Website body
