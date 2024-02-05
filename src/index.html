@@ -24,7 +24,8 @@
 </head>
 <body class="font-poppins">
 
-    <section class="relative lg:h-screen h-full w-full flex flex-col mx-auto z-20 mb-[150px] lg:px-4">
+    <!-- Header -->
+    <section class="relative lg:h-screen lg:mb-0 mb-[150px] w-full flex flex-col mx-auto z-20 lg:px-4">
         <header>
             <!-- Nav -->
             <div class="relative bg-transparent z-30 max-w-[1230px] mx-auto">
@@ -63,10 +64,10 @@
                                     <a href="#" class="block py-2 px-2 md:px-0.5 text-black hover:text-[#F89E52] duration-300">Increase Sales</a>
                                 </li>
                                 <li>
-                                    <a href="#" class="block py-2 px-2 md:px-0.5 text-black hover:text-[#F89E52] duration-300" id="servicesBtn">Services <i class="fa-solid fa-chevron-down ml-1 duration-300" id="arrowIconServices"></i></a>
+                                    <a href="#" class="block py-2 px-2 md:px-0.5 text-black hover:text-[#F89E52] duration-300" id="servicesBtn">Services <i class="fa-solid fa-chevron-down ml-1" id="arrowIconServices"></i></a>
                                 </li>
                                 <li> 
-                                    <a href="#" class="block py-2 px-2 md:px-0.5 text-black hover:text-[#F89E52] duration-300" id="plansBtn">Plans & Pricing <i class="fa-solid fa-chevron-down ml-1 duration-300" id="arrowIconPlans"></i></a>
+                                    <a href="#" class="block py-2 px-2 md:px-0.5 text-black hover:text-[#F89E52] duration-300" id="plansBtn">Plans & Pricing <i class="fa-solid fa-chevron-down ml-1" id="arrowIconPlans"></i></a>
                                 </li>
                                 </li>
                             </ul>
@@ -90,7 +91,6 @@
                                 </li>
                                 <li> 
                                     <a href="#" class="block py-4 px-5 text-black hover:text-[#F89E52] font-[500] duration-300 border-t border-[#c5c5c5] border-b" id="plansBtn">Plans & Pricing</a>
-                                </li>
                                 </li>
                             </ul>
                         </div>
@@ -300,16 +300,16 @@
         <div class="w-full h-full flex flex-col lg:flex-row justify-center items-start lg:py-[50px] py-4 z-20 mx-auto" id="baner">
             <div class="flex lg:flex-row flex-col px-4 py-4 lg:max-w-[1230px] w-full mx-auto gap-[50px]">
                 <!-- Text -->
-                <div class="flex flex-col space-y-[40px] lg:items-start items-center">
+                <div class="flex flex-col space-y-[30px] lg:items-start items-center">
                     <p class="w-[370px] py-[12px] bg-[#F79D5A] text-white text-[18px] text-center rounded-[32px]">Social Media Marketing That Works!</p>
                     <div class="flex flex-col sm:space-y-[8px] space-y-[16px] lg:text-left text-center w-full">
-                        <h1 class="font-[700] lg:text-[60px] sm:text-[72px] text-[35.2px] sm:leading-[66px] leading-[38.72px]">Save Time</h1>
-                        <h1 class="font-[700] lg:text-[60px] sm:text-[72px] text-[35.2px] sm:leading-[66px] leading-[38.72px]">Build Connections</h1>
-                        <h1 class="font-[700] lg:text-[60px] sm:text-[72px] text-[35.2px] sm:leading-[66px] leading-[38.72px]">Increase Profits</h1>
+                        <h1 class="font-[700] lg:text-[60px] sm:text-[72px] text-[35.2px] sm:leading-[79.2px] leading-[38.72px]">Save Time</h1>
+                        <h1 class="font-[700] lg:text-[60px] sm:text-[72px] text-[35.2px] sm:leading-[79.2px] leading-[38.72px]">Build Connections</h1>
+                        <h1 class="font-[700] lg:text-[60px] sm:text-[72px] text-[35.2px] sm:leading-[79.2px] leading-[38.72px]">Increase Profits</h1>
                     </div>
 
                     <!-- Icons & Button's -->
-                    <div class="lg:flex flex-col lg:space-y-[80px] space-y-[40px] hidden">
+                    <div class="lg:flex flex-col lg:space-y-[40px] space-y-[40px] hidden">
                         <div class="flex space-x-4">
                             <img src="images/icons/header icons/linkedin.png">
                             <img src="images/icons/header icons/fb.png">
@@ -353,7 +353,7 @@
                         <img src="images/icons/header icons/pint.png">
                     </div>
                     <div class="flex space-x-2 items-center justify-center w-full">
-                        <a href="#" class="rounded-[20px] py-[28px] px-[55px] bg-[#3482FF] text-white text-[16px] font-[600] text-center sm:w-fit w-full">View Our Plans</a>
+                        <a href="#" class="rounded-[20px] py-[23px] px-[38px] bg-[#3482FF] text-white text-[16px] font-[600] text-center sm:w-fit w-full">View Our Plans</a>
                     </div>
                 </div>
             </div>
@@ -411,78 +411,68 @@
             </div>
     </div>
 
-    <section class="w-full lg:h-screen h-fit bg-[#292F3E] flex items-center justify-center space-x-4" id="section_counter">
-            <div class="flex lg:flex-row flex-col max-w-[1230px] px-2 lg:pb-10 mt-32">
-                <!-- Left site -->
-                <div class="lg:order-1 order-2 h-fit lg:max-w-1/2 w-full flex flex-col items-center text-center lg:text-left lg:items-start py-20 lg:py-0 space-y-8">
-                    <p class="text-[#FFD437] font-[500] text-[20px]">
-                        Social Media Management is
+    <section class="w-full lg:h-screen lg:max-h-full h-fit bg-[#292F3E] flex items-center justify-center px-4" id="section_counter">
+        <div class="flex lg:flex-row items-center flex-col max-w-[1230px] lg:pt-[200px] pt-[164px] lg:pb-[120px] lg:space-x-24">
+            <!-- Left site -->
+            <div class="lg:order-1 order-2 h-fit w-full flex flex-col items-center text-center lg:text-left lg:items-start py-20 lg:py-0 space-y-8">
+                <p class="text-[#FFD437] font-[500] text-[20px]">
+                    Social Media Management is
+                </p>
+                <h1 class="text-white font-[700] text-[50px] leading-[60px]">
+                    Building Brands<br />Creating Connections<br />Driving Sales
+                </h1>
+            
+                <div class="text-[19px] text-[#bbbbbb] font-[300] space-y-4 w-full">
+                    <p>
+                        Social Media is more than just posting and showing off how many
+                        followers you have. It's a valuable addition to your marketing strategy
+                        that <a href="#" class="underline text-[#DBDBDB]">builds trust</a> and
+                        <a href="#" class="underline text-[#DBDBDB]">creates connections</a> with potential
+                        customers to <a href="#" class="underline text-[#DBDBDB]">drive sales</a> and increase
+                        your <a href="#" class="underline text-[#DBDBDB]">revenue</a>.
                     </p>
-                    <h1 class="text-white font-[700] text-[50px] leading-[60px]">
-                        Building Brands<br />Creating Connections<br />Driving Sales
-                    </h1>
+                    <p>
+                        Save your time and money by partnering with us and start seeing results
+                        that give you the
+                        <a href="#" class="underline text-[#DBDBDB]">highest return on investment</a>.
+                    </p>
+                    <p>After all; when you grow, we grow together.</p>
+                </div>
             
-                    <div class="text-[19px] text-[#bbbbbb] font-[300] space-y-4 lg:w-[70%] w-full">
-                        <p>
-                            Social Media is more than just posting and showing off how many
-                            followers you have. It's a valuable addition to your marketing strategy
-                            that <a href="#" class="underline text-[#DBDBDB]">builds trust</a> and
-                            <a href="#" class="underline text-[#DBDBDB]">creates connections</a> with potential
-                            customers to <a href="#" class="underline text-[#DBDBDB]">drive sales</a> and increase
-                            your <a href="#" class="underline text-[#DBDBDB]">revenue</a>.
-                        </p>
-                        <p>
-                            Save your time and money by partnering with us and start seeing results
-                            that give you the
-                            <a href="#" class="underline text-[#DBDBDB]">highest return on investment</a>.
-                        </p>
-                        <p>After all; when you grow, we grow together.</p>
+                <div class="flex flex-col sm:flex-row w-full space-x-2 py-4 items-center justify-center lg:justify-start">
+                    <a href="#" class="block rounded-[20px] w-full sm:w-fit py-[14px] sm:py-[28px] sm:px-[55px] bg-[#3482FF] text-white text-[16px] font-[600] text-center">Contact Us</a>
+                    <a href="#" class="block font-normal text-[#3482FF] w-full sm:w-fit py-[14px] sm:py-[28px] px-[28px] text-center">How We Can Help</a>
+                </div>
+            </div>
+
+            <!-- Right site -->
+            <div class="lg:order-2 order-1 h-fit lg:w-fit w-full flex flex-col sm:flex-row sm:space-x-8 space-y-8 sm:space-y-0 items-center justify-center">
+                <div class="flex-col space-y-8 sm:pt-[80px] pt-0">
+                    <div class="counter-item w-[250px] h-[250px] bg-white bg-[url('images/icons/counterIcons/divicon1.png')] bg-no-repeat bg-left-bottom rounded-xl flex flex-col justify-center items-center">
+                        <h1 class="count text-[#F76766] text-[50px] font-[700]" data-target="252">0</h1>
+                        <p class="text-[#6B645D] text-[18px] font-[500]">Offices</p>
                     </div>
-            
-                    <div class="flex flex-col sm:flex-row w-full space-x-2 py-4 items-center justify-center lg:justify-start">
-                        <a href="#"
-                            class="block rounded-[20px] w-full sm:w-fit py-[14px] sm:py-[28px] sm:px-[55px] bg-[#3482FF] text-white text-[16px] font-[600] text-center">Contact
-                            Us</a>
-                        <a href="#"
-                            class="block font-normal text-[#3482FF] w-full sm:w-fit py-[14px] sm:py-[28px] px-[28px] text-center">How
-                            We Can Help</a>
+                    <div class="counter-item w-[250px] h-[250px] bg-white bg-[url('images/icons/counterIcons/divicon2.png')] bg-no-repeat bg-left-bottom rounded-xl flex flex-col justify-center items-center">
+                        <div class="inline-flex">
+                            <h1 class="count text-[#57C0CE] text-[50px] font-[700]" data-target="15">0</h1><span class="text-[#57C0CE] text-[50px] font-[700]">K</span>
+                        </div>
+                        <p class="text-[#6B645D] text-[18px] font-[500]">Customers</p>
                     </div>
                 </div>
-                <!-- Right site -->
-                <div
-                    class="lg:order-2 order-1 h-fit lg:max-w-1/2 w-full flex flex-col sm:flex-row sm:space-x-8 space-y-8 sm:space-y-0 justify-center items-center">
-                    <div class="flex-col space-y-8 mt-16">
-                        <div
-                            class="counter-item w-[250px] h-[250px] bg-white bg-[url('images/icons/counterIcons/divicon1.png')] bg-no-repeat bg-left-bottom rounded-xl flex flex-col justify-center items-center">
-                            <h1 class="count text-[#F76766] text-[50px] font-[700]" data-target="100">0</h1>
-                            <p class="text-[#6B645D] text-[18px] font-[500]">Offices</p>
-                        </div>
-                        <div
-                            class="counter-item w-[250px] h-[250px] bg-white bg-[url('images/icons/counterIcons/divicon2.png')] bg-no-repeat bg-left-bottom rounded-xl flex flex-col justify-center items-center">
-                            <div class="inline-flex">
-                                <h1 class="count text-[#57C0CE] text-[50px] font-[700]" data-target="3">0</h1><span
-                                    class="text-[#57C0CE] text-[50px] font-[700]">K</span>
-                            </div>
-                            <p class="text-[#6B645D] text-[18px] font-[500]">Customers</p>
-                        </div>
+                <div class="flex-col space-y-8 sm:pb-[80px] pb-0">
+                    <div class="counter-item w-[250px] h-[250px] bg-white bg-[url('images/icons/counterIcons/divicon4.png')] bg-no-repeat bg-right-bottom rounded-xl flex flex-col justify-center items-center">
+                        <h1 class="count text-[#265FDB] text-[50px] font-[700]" data-target="10">0</h1>
+                        <p class="text-[#6B645D] text-[18px] font-[500]">Workers</p>
                     </div>
-                    <div class="flex-col space-y-8 mb-16">
-                        <div
-                            class="counter-item w-[250px] h-[250px] bg-white bg-[url('images/icons/counterIcons/divicon4.png')] bg-no-repeat bg-right-bottom rounded-xl flex flex-col justify-center items-center">
-                            <h1 class="count text-[#265FDB] text-[50px] font-[700]" data-target="10">0</h1>
-                            <p class="text-[#6B645D] text-[18px] font-[500]">Workers</p>
+                    <div class="counter-item w-[250px] h-[250px] bg-white bg-[url('images/icons/counterIcons/divicon3.png')] bg-no-repeat bg-left-bottom rounded-xl flex flex-col justify-center items-center">
+                        <div class="inline-flex">
+                            <h1 class="count text-[#A666F7] text-[50px] font-[700]" data-target="1300">0</h1><span class="text-[#A666F7] text-[50px] font-[700]">+</span>
                         </div>
-                        <div
-                            class="counter-item w-[250px] h-[250px] bg-white bg-[url('images/icons/counterIcons/divicon3.png')] bg-no-repeat bg-left-bottom rounded-xl flex flex-col justify-center items-center">
-                            <div class="inline-flex">
-                                <h1 class="count text-[#A666F7] text-[50px] font-[700]" data-target="100">0</h1><span
-                                    class="text-[#A666F7] text-[50px] font-[700]">+</span>
-                            </div>
-                            <p class="text-[#6B645D] text-[18px] font-[500]">Projects</p>
-                        </div>
+                        <p class="text-[#6B645D] text-[18px] font-[500]">Projects</p>
                     </div>
                 </div>
             </div>
+        </div>
     </section>
         
     <section class="relative w-full h-screen bg-white mt-10 lg:mt-0">
