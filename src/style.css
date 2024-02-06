@@ -604,6 +604,10 @@ video {
   top: 50%;
 }
 
+.right-0 {
+  right: 0px;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -627,6 +631,11 @@ video {
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+
+.mx-20 {
+  margin-left: 5rem;
+  margin-right: 5rem;
 }
 
 .mb-2 {
@@ -671,6 +680,22 @@ video {
 
 .mt-\[150px\] {
   margin-top: 150px;
+}
+
+.mt-\[50px\] {
+  margin-top: 50px;
+}
+
+.mt-\[23px\] {
+  margin-top: 23px;
+}
+
+.mt-\[43px\] {
+  margin-top: 43px;
+}
+
+.mr-10 {
+  margin-right: 2.5rem;
 }
 
 .block {
@@ -759,8 +784,52 @@ video {
   height: 100vh;
 }
 
+.h-\[500px\] {
+  height: 500px;
+}
+
+.h-\[600px\] {
+  height: 600px;
+}
+
+.h-\[565px\] {
+  height: 565px;
+}
+
+.h-\[700px\] {
+  height: 700px;
+}
+
+.h-\[60\%\] {
+  height: 60%;
+}
+
 .max-h-\[100px\] {
   max-height: 100px;
+}
+
+.max-h-\[50\%\] {
+  max-height: 50%;
+}
+
+.max-h-\[500px\] {
+  max-height: 500px;
+}
+
+.max-h-\[550px\] {
+  max-height: 550px;
+}
+
+.max-h-\[650px\] {
+  max-height: 650px;
+}
+
+.max-h-\[700px\] {
+  max-height: 700px;
+}
+
+.min-h-\[500px\] {
+  min-height: 500px;
 }
 
 .w-14 {
@@ -840,6 +909,54 @@ video {
   width: 100%;
 }
 
+.w-1\/4 {
+  width: 25%;
+}
+
+.w-1\/3 {
+  width: 33.333333%;
+}
+
+.w-1\/2 {
+  width: 50%;
+}
+
+.w-2\/4 {
+  width: 50%;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.w-\[50\%\] {
+  width: 50%;
+}
+
+.w-\[40\%\] {
+  width: 40%;
+}
+
+.w-\[30\%\] {
+  width: 30%;
+}
+
+.w-\[410px\] {
+  width: 410px;
+}
+
+.w-\[510px\] {
+  width: 510px;
+}
+
+.w-\[610px\] {
+  width: 610px;
+}
+
+.w-\[80\%\] {
+  width: 80%;
+}
+
 .max-w-\[1230px\] {
   max-width: 1230px;
 }
@@ -858,6 +975,47 @@ video {
 
 .max-w-\[500px\] {
   max-width: 500px;
+}
+
+.max-w-fit {
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+}
+
+.max-w-\[50\%\] {
+  max-width: 50%;
+}
+
+.max-w-\[70\%\] {
+  max-width: 70%;
+}
+
+.max-w-\[60\%\] {
+  max-width: 60%;
+}
+
+.max-w-\[800px\] {
+  max-width: 800px;
+}
+
+.max-w-\[610px\] {
+  max-width: 610px;
+}
+
+.max-w-\[510px\] {
+  max-width: 510px;
+}
+
+.max-w-\[410px\] {
+  max-width: 410px;
+}
+
+.max-w-\[600px\] {
+  max-width: 600px;
+}
+
+.max-w-\[400px\] {
+  max-width: 400px;
 }
 
 .grow {
@@ -981,6 +1139,10 @@ video {
   justify-content: flex-start;
 }
 
+.justify-end {
+  justify-content: flex-end;
+}
+
 .justify-center {
   justify-content: center;
 }
@@ -1055,6 +1217,10 @@ video {
 
 .gap-\[8px\] {
   gap: 8px;
+}
+
+.gap-\[27px\] {
+  gap: 27px;
 }
 
 .gap-x-6 {
@@ -1412,6 +1578,21 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-blue-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(96 165 250 / var(--tw-bg-opacity));
+}
+
+.bg-green-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(134 239 172 / var(--tw-bg-opacity));
+}
+
+.bg-green-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(74 222 128 / var(--tw-bg-opacity));
+}
+
 .bg-\[url\(\'images\/icons\/counterIcons\/divicon1\.png\'\)\] {
   background-image: url('images/icons/counterIcons/divicon1.png');
 }
@@ -1595,11 +1776,6 @@ video {
   padding-bottom: 120px;
 }
 
-.py-\[12px\] {
-  padding-top: 12px;
-  padding-bottom: 12px;
-}
-
 .py-\[14px\] {
   padding-top: 14px;
   padding-bottom: 14px;
@@ -1648,6 +1824,16 @@ video {
 .py-\[90px\] {
   padding-top: 90px;
   padding-bottom: 90px;
+}
+
+.px-20 {
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .pb-0 {
@@ -1724,6 +1910,26 @@ video {
 
 .pt-\[20px\] {
   padding-top: 20px;
+}
+
+.pt-\[97px\] {
+  padding-top: 97px;
+}
+
+.pb-\[87\%\] {
+  padding-bottom: 87%;
+}
+
+.pl-0 {
+  padding-left: 0px;
+}
+
+.pt-\[50px\] {
+  padding-top: 50px;
+}
+
+.pr-10 {
+  padding-right: 2.5rem;
 }
 
 .text-left {
@@ -2335,6 +2541,22 @@ video {
     max-width: fit-content;
   }
 
+  .sm\:max-w-\[70\%\] {
+    max-width: 70%;
+  }
+
+  .sm\:max-w-\[80\%\] {
+    max-width: 80%;
+  }
+
+  .sm\:max-w-\[100\%\] {
+    max-width: 100%;
+  }
+
+  .sm\:max-w-full {
+    max-width: 100%;
+  }
+
   .sm\:list-disc {
     list-style-type: disc;
   }
@@ -2420,6 +2642,11 @@ video {
     padding-bottom: 0.75rem;
   }
 
+  .sm\:py-\[12px\] {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
   .sm\:py-\[22\.5px\] {
     padding-top: 22.5px;
     padding-bottom: 22.5px;
@@ -2428,11 +2655,6 @@ video {
   .sm\:py-\[28px\] {
     padding-top: 28px;
     padding-bottom: 28px;
-  }
-
-  .sm\:py-\[12px\] {
-    padding-top: 12px;
-    padding-bottom: 12px;
   }
 
   .sm\:pb-\[80px\] {
@@ -2449,6 +2671,10 @@ video {
 
   .sm\:pt-\[80px\] {
     padding-top: 80px;
+  }
+
+  .sm\:pl-0 {
+    padding-left: 0px;
   }
 
   .sm\:text-left {
@@ -2657,6 +2883,26 @@ video {
     width: fit-content;
   }
 
+  .lg\:w-full {
+    width: 100%;
+  }
+
+  .lg\:w-\[410px\] {
+    width: 410px;
+  }
+
+  .lg\:w-1\/3 {
+    width: 33.333333%;
+  }
+
+  .lg\:w-1\/4 {
+    width: 25%;
+  }
+
+  .lg\:w-80 {
+    width: 20rem;
+  }
+
   .lg\:max-w-\[1200px\] {
     max-width: 1200px;
   }
@@ -2700,6 +2946,10 @@ video {
   .lg\:max-w-max {
     max-width: -moz-max-content;
     max-width: max-content;
+  }
+
+  .lg\:max-w-\[410px\] {
+    max-width: 410px;
   }
 
   .lg\:flex-row {
@@ -2774,6 +3024,12 @@ video {
     margin-bottom: calc(80px * var(--tw-space-y-reverse));
   }
 
+  .lg\:space-x-8 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(2rem * var(--tw-space-x-reverse));
+    margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+
   .lg\:bg-\[url\(\'images\/img\/company_shape_lg\.svg\'\)\] {
     background-image: url('images/img/company_shape_lg.svg');
   }
@@ -2813,6 +3069,11 @@ video {
     padding-bottom: 50px;
   }
 
+  .lg\:px-\[120px\] {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+
   .lg\:pb-\[120px\] {
     padding-bottom: 120px;
   }
@@ -2833,8 +3094,24 @@ video {
     padding-top: 200px;
   }
 
+  .lg\:pt-0 {
+    padding-top: 0px;
+  }
+
+  .lg\:pl-\[120px\] {
+    padding-left: 120px;
+  }
+
+  .lg\:pb-0 {
+    padding-bottom: 0px;
+  }
+
   .lg\:text-left {
     text-align: left;
+  }
+
+  .lg\:text-center {
+    text-align: center;
   }
 
   .lg\:text-\[16px\] {
